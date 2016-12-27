@@ -1,0 +1,5 @@
+# Getting it up and running
+npm install -g http-server
+
+# Start server
+http-server -o
