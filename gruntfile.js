@@ -51,6 +51,15 @@ module.exports = function(grunt) {
                     nospawn: true
                 }
             }
+        },
+        // added this
+        connect: {
+          server: {
+            options: {
+              port: 9001,
+              base: 'www-root'
+            }
+          }
         }
     });
 
@@ -60,9 +69,39 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-angular-templates');
 
+    grunt.loadNpmTasks('grunt-serve');
+
+
     // Default task(s).
     grunt.registerTask('default', ['less']);
 
     grunt.loadNpmTasks('grunt-serve');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    // added this
+    grunt.registerTask('server', 'Start a custom web server', function() {
+        grunt.log.writeln('Started web server on port 3000');
+        require('./js/app.js').listen(3000);
+    });
+
+    grunt.registerTask('server', 'Start a custom web server.', function() {
+      grunt.log.writeln('Starting web server on port 1234.');
+      require('./js/app.js').listen(1234);
+    });
 
 };
+
+
+
+// // Project configuration.
+// grunt.initConfig({
+//   connect: {
+//     server: {
+//       options: {
+//         port: 9001,
+//         base: 'www-root'
+//       }
+//     }
+//   }
+// });
+
+

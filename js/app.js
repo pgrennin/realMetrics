@@ -8,4 +8,7 @@ var materialAdmin = angular.module('materialAdmin', [
     'nouislider',
     'ngTable'
 ])
+
+
+
  
