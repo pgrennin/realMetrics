@@ -2,4 +2,7 @@
 npm install -g http-server
 
 # Start server
-http-server -o
+http-server 
+
+# go to 
+http://10.10.49.148:8080
