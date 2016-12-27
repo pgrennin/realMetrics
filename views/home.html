@@ -480,7 +480,42 @@
 
                                               
                         </div>
+                        </div>
                         <!-- *****************  end First calculation *******************-->
+
+                        <!-- 2nd calc -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Capitalization Rate <small>Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.</small></h2>
+                            </div>
+
+                            <div class="card-body card-padding">
+                                <div class="row">
+                                    <form>
+                                    <div class="col-xs-5">
+                                        <div class="fg-line form-group">
+                                            <input type="text" class="form-control input-sm" placeholder="net operating income" ng-model="noi">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="fg-line form-group">
+                                            <input type="text" class="form-control input-sm" placeholder="value {{noi}}" ng-model="value">
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-xs-3">
+                                        <div class="fg-line form-group">
+                                            <input type="text" class="form-control input-sm" placeholder="capitilization rate" ng-model="capitilizationRate" readonly="">
+                                        </div>
+                                    </div> -->
+                                    </form>
+
+                                   <small>Capitalization Rate:</small>
+                                   <h3 class="m-0 f-400">{{(noi/value)*100 |number:2}}%</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END second calc -->
 
 
                
@@ -491,3 +526,7 @@
 </section>
 
 <footer id="footer" data-ng-include="'template/footer.html'"></footer>
+
+
+
+
