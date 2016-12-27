@@ -84,35 +84,88 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Begin Row of Mini Charts -->
             <div class="mini-charts">
                 <div class="row">
                     <div class="col-sm-6 col-md-3">
-                        <div class="mini-charts-item bgm-cyan">
+                        <div class="mini-charts-item bgm-bluegray">
                             <div class="clearfix">
                                 <div class="chart stats-bar" data-sparkline-bar></div>
                                 <div class="count">
-                                    <small>Website Traffics</small>
-                                    <h2>987,459</h2>
+                                    <small>capitalization rate</small>
+                                    <h2>{{(noi/value)*100 |number:2}}%</h2>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-md-3">
-                        <div class="mini-charts-item bgm-lightgreen">
+                        <div class="mini-charts-item bgm-bluegray">
                             <div class="clearfix">
                                 <div class="chart stats-bar-2" data-sparkline-bar></div>
                                 <div class="count">
-                                    <small>Website Impressions</small>
-                                    <h2>356,785K</h2>
+                                    <small>cash on cash return</small>
+                                    <h2>$ 100,000</h2>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-sm-6 col-md-3">
-                        <div class="mini-charts-item bgm-orange">
+                        <div class="mini-charts-item bgm-bluegray">
+                            <div class="clearfix">
+                                <div class="chart stats-line" data-sparkline-line></div>
+                                <div class="count">
+                                    <small>internal rate of return</small>
+                                    <h2>$ 458,778</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3">
+                        <div class="mini-charts-item bgm-bluegray">
+                            <div class="clearfix">
+                                <div class="chart stats-line-2" data-sparkline-line></div>
+                                <div class="count">
+                                    <small>gross rent multiplier</small>
+                                    <h2>23,856</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Begin 2nd Row of Mini Charts -->
+            <div class="mini-charts">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="mini-charts-item bgm-bluegray">
+                            <div class="clearfix">
+                                <div class="chart stats-bar" data-sparkline-bar></div>
+                                <div class="count">
+                                    <small>70% rule</small>
+                                    <h2>{{(noi/value)*100 |number:2}}%</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3">
+                        <div class="mini-charts-item bgm-bluegray">
+                            <div class="clearfix">
+                                <div class="chart stats-bar-2" data-sparkline-bar></div>
+                                <div class="count">
+                                    <small>Gross Rent Multiplier</small>
+                                    <h2>$ 100,000</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3">
+                        <div class="mini-charts-item bgm-bluegray">
                             <div class="clearfix">
                                 <div class="chart stats-line" data-sparkline-line></div>
                                 <div class="count">
@@ -261,6 +314,48 @@
 
             <div class="row">
                 <div class="col-sm-6">
+                    
+                    <!--***Begin capitlization rate calc  -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Capitalization Rate <small>Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.</small></h2>
+                        </div>
+
+                        <div class="card-body card-padding">
+                            <div class="row">
+                                <form>
+                                <div class="col-xs-5">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder="net operating income" ng-model="noi">
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder="value {{noi}}" ng-model="value">
+                                    </div>
+                                </div>
+                                <!-- <div class="col-xs-3">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder="capitilization rate" ng-model="capitilizationRate" readonly="">
+                                    </div>
+                                </div> -->
+                                </form>
+
+                               <small>Capitalization Rate:</small>
+                               <h3 class="m-0 f-400">{{(noi/value)*100 |number:2}}%</h3>
+                            </div>
+
+                            <div class="p-t-20 p-b-20 text-center">
+                                <div class="easy-pie sub-pie-1" data-percent="50" data-easypie-chart>
+                                    <div class="percent">50</div>
+                                    <div class="pie-title">Capitalization Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--***End capitlization rate calc  -->                    
+
                     <!-- Recent Items -->
                     <div class="card" data-ng-controller="recentitemCtrl as rictrl">
                         <div class="card-header">
@@ -483,7 +578,7 @@
                         </div>
                         <!-- *****************  end First calculation *******************-->
 
-                        <!-- 2nd calc -->
+                        <!--***Begin capitlization rate calc  -->
                         <div class="card">
                             <div class="card-header">
                                 <h2>Capitalization Rate <small>Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.</small></h2>
@@ -515,7 +610,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- END second calc -->
+                        <!--***End capitlization rate calc  -->
 
 
                

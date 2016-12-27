@@ -6,3 +6,6 @@ gulp serve
 
 # how to setup gulp and server with live-reloading
 https://github.com/gulpjs/gulp/blob/master/docs/recipes/server-with-livereload-and-css-injection.md
+
+# go to this route for examples of dashboard widgets.
+http://localhost:3000/#/example-dashboard

@@ -541,4 +541,13 @@ materialAdmin
                 url: '/breadcrumb-demo',
                 templateUrl: 'views/breadcrumb-demo.html'
             })
+
+
+            //------------------------------
+            // CUSTOM
+            //------------------------------
+            .state ('example-dashboard', {
+                url: '/example-dashboard',
+                templateUrl: 'views/example-dashboard.html'
+            })
     });
