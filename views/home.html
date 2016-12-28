@@ -89,16 +89,17 @@
             <!-- Begin 1st Row of Mini Charts -->
             <div class="mini-charts">
                 <div class="row">
+
                     <div class="col-sm-6 col-md-3">
-                        <div class="mini-charts-item bgm-bluegray">
-                            <div class="clearfix">
-                                <div class="chart stats-bar" data-sparkline-pie></div>
-                                <div class="count">
-                                    <small>capitalization rate</small>
-                                    <h2>{{(noi/value)*100 |number:2}}%</h2>
-                                </div>
+                    <div class="mini-charts-item bgm-teal">
+                        <div class="clearfix">
+                            <div class="chart chart-pie stats-pie" data-sparkline-pie></div>
+                            <div class="count">
+                                <small>capitlization rate</small>
+                                <h2>99.87%</h2>
                             </div>
                         </div>
+                    </div>
                     </div>
 
                     <div class="col-sm-6 col-md-3">
@@ -106,14 +107,14 @@
                             <div class="clearfix">
                                 <div class="chart stats-bar-2" data-sparkline-bar></div>
                                 <div class="count">
-                                    <small>cash on cash return</small>
+                                    <small>net operating income</small>
                                     <h2>$ 100,000</h2>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-6 col-md-3">
+                    <!-- <div class="col-sm-6 col-md-3">
                         <div class="mini-charts-item bgm-bluegray">
                             <div class="clearfix">
                                 <div class="chart stats-line" data-sparkline-line></div>
@@ -135,12 +136,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
+
+                </div> <!-- end row -->
             </div> <!-- end  minicharts row -->
 
             <!-- Begin 2nd Row of Mini Charts -->
-            <div class="mini-charts">
+            <!-- <div class="mini-charts">
                 <div class="row">
                     <div class="col-sm-6 col-md-3">
                         <div class="mini-charts-item bgm-bluegray">
@@ -164,7 +166,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                    <!--  <div class="col-sm-6 col-md-3">
                         <div class="mini-charts-item bgm-bluegray">
@@ -189,8 +191,8 @@
                             </div>
                         </div>
                     </div> -->
-                </div>
-            </div>
+                <!-- </div>
+            </div> -->
 
 
             <div class="dash-widgets">
@@ -362,17 +364,21 @@
                         <div class="card-body card-padding">
                             <div class="row">
                                 <form>
-                                <div class="col-xs-5">
-                                    <div class="fg-line form-group">
-                                        <input type="text" class="form-control input-sm" placeholder="net operating income" ng-model="noi">
+                                
+                                <div class="form-group fg-float m-b-30 col-xs-5">
+                                    <div class="fg-line">
+                                        <input type="number" class="form-control input-sm" ng-model="noi">
+                                        <label class="fg-label">net operating income</label>
                                     </div>
+                                </div>
 
-                                </div>
-                                <div class="col-xs-3">
-                                    <div class="fg-line form-group">
-                                        <input type="text" class="form-control input-sm" placeholder="value {{noi}}" ng-model="value">
+                                <div class="form-group fg-float m-b-30 col-xs-5">
+                                    <div class="fg-line">
+                                        <input type="number" class="form-control input-sm" ng-model="value">
+                                        <label class="fg-label">value</label>
                                     </div>
                                 </div>
+
                                 <!-- <div class="col-xs-3">
                                     <div class="fg-line form-group">
                                         <input type="text" class="form-control input-sm" placeholder="capitilization rate" ng-model="capitilizationRate" readonly="">
@@ -380,22 +386,24 @@
                                 </div> -->
                                 </form>
 
-                               <small>Capitalization Rate:</small>
-                               <h3 class="m-0 f-400">{{(noi/value)*100 |number:2}}</h3>
+                               <!-- <small>Capitalization Rate:</small>
+                               <h3 class="m-0 f-400">{{(noi/value)*100 |number:2}}</h3> -->
                             </div>
 
                             <div class="p-t-20 p-b-20 text-center">
                                 <div class="easy-pie sub-pie-1" data-percent="50" data-easypie-chart>
-                                    <div class="percent">{{(noi/value)*100 |number:2}}%</div>
+                                    <div class="percent">{{(noi/value)*100 |number:2}}</div>
                                     <div class="pie-title">Capitalization Rate</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--***End capitlization rate calc  -->                    
+                    <!--***End capitlization rate calc  -->
+
+
 
                     <!-- Recent Items -->
-                    <div class="card" data-ng-controller="recentitemCtrl as rictrl">
+                    <!-- <div class="card" data-ng-controller="recentitemCtrl as rictrl">
                         <div class="card-header">
                             <h2>Recent Items <small>Phasellus condimentum ipsum id auctor imperdie</small></h2>
                             <ul class="actions">
@@ -438,10 +446,10 @@
                             </table>
                         </div>
                         <div id="recent-items-chart" class="flot-chart" data-line-chart></div>
-                    </div>
+                    </div> -->
 
                     <!-- Todo Lists -->
-                    <div id="todo-lists" data-ng-controller="todoCtrl as tctrl">
+                    <!-- <div id="todo-lists" data-ng-controller="todoCtrl as tctrl">
                         <div class="tl-header">
                             <h2>Todo Lists</h2>
                             <small>Add, edit and manage your Todo Lists</small>
@@ -510,14 +518,13 @@
 
                         </div>
                     </div>
-                </div>
-
-                <div class="col-sm-6">
+                </div> -->
+                <!-- </div> -->
                     <!-- Calendar -->
-                    <div id="calendar-widget" data-full-calendar></div>
+                    <!-- <div id="calendar-widget" data-full-calendar></div> -->
 
                     <!-- Recent Posts -->
-                    <div class="card" data-ng-controller="recentpostCtrl as rpctrl">
+                   <!--  <div class="card" data-ng-controller="recentpostCtrl as rpctrl">
                         <div class="card-header ch-alt m-b-20">
                             <h2>Recent Posts <small>Phasellus condimentum ipsum id auctor imperdie</small></h2>
                             <ul class="actions">
@@ -573,10 +580,10 @@
                                 <a class="lv-footer" href="">View All</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- *****************  First calculation *******************-->
-                    <div class="card" data-ng-controller="recentitemCtrl as rictrl">
+                    <!-- <div class="card" data-ng-controller="recentitemCtrl as rictrl">
                         <div class="card-header">
                             <h2>Capitilization Rate Calculator <small>a description of this calculator</small></h2>
                             <ul class="actions">
@@ -613,11 +620,11 @@
 
                                               
                         </div>
-                        </div>
+                        </div> -->
                         <!-- *****************  end First calculation *******************-->
 
                         <!--***Begin capitlization rate calc  -->
-                        <div class="card">
+                        <!-- <div class="card">
                             <div class="card-header">
                                 <h2>Capitalization Rate <small>Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.</small></h2>
                             </div>
@@ -636,18 +643,18 @@
                                             <input type="text" class="form-control input-sm" placeholder="value {{noi}}" ng-model="value">
                                         </div>
                                     </div>
-                                    <!-- <div class="col-xs-3">
+                                    <div class="col-xs-3">
                                         <div class="fg-line form-group">
                                             <input type="text" class="form-control input-sm" placeholder="capitilization rate" ng-model="capitilizationRate" readonly="">
                                         </div>
-                                    </div> -->
+                                    </div>
                                     </form>
 
                                    <small>Capitalization Rate:</small>
                                    <h3 class="m-0 f-400">{{(noi/value)*100 |number:2}}%</h3>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!--***End capitlization rate calc  -->
 
 
