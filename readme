@@ -46,3 +46,8 @@ http://localhost:3000/#/example-dashboard
 		        $scope.products.splice(x, 1);
 		    } 
 		})
+
+
+# How to add charts
+
+https://davidwalsh.name/angular-charts

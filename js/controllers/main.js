@@ -599,3 +599,73 @@ materialAdmin
         } 
     })
 
+
+    .controller('MyController', function($scope) {
+      // chart data source
+      // $scope.dataSource = {
+      //   "chart": {
+      //     "caption": "Column Chart Built in Angular!",
+      //     "captionFontSize": "30",
+      //     // more chart properties - explained later
+      //   },
+      //   "data": [{
+      //       "label": "CornflowerBlue",
+      //       "value": "42"
+      //     }, //more chart data
+      //   ]
+      // };
+
+      // # test 2
+      $scope.dataSource = {
+          "chart": {
+              "caption": "Expenditures Incurred in Publishing a Book",
+              "bgcolor": "FFFFFF",
+              "showvalues": "1",
+              "showpercentvalues": "1",
+              "showborder": "0",
+              "showplotborder": "0",
+              "showlegend": "1",
+              "legendborder": "0",
+              "legendposition": "bottom",
+              "enablesmartlabels": "1",
+              "use3dlighting": "0",
+              "showshadow": "0",
+              "legendbgcolor": "#CCCCCC",
+              "legendbgalpha": "20",
+              "legendborderalpha": "0",
+              "legendshadow": "0",
+              "legendnumcolumns": "3",
+              "palettecolors": "#f8bd19,#e44a00,#008ee4,#33bdda,#6baa01,#583e78"
+          },
+          "data": [
+              {
+                  "label": "Paper Cost",
+                  "value": "25"
+              },
+              {
+                  "label": "Binding",
+                  "value": "20"
+              },
+              {
+                  "label": "Printing Cost",
+                  "value": "20"
+              },
+              {
+                  "label": "Royality",
+                  "value": "15"
+              },
+              {
+                  "label": "Transportation Cost",
+                  "value": "10"
+              },
+              {
+                  "label": "Promotion Cost",
+                  "value": "10"
+              }
+          ]
+      };
+
+
+
+    })
+
