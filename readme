@@ -13,3 +13,36 @@ https://github.com/gulpjs/gulp/blob/master/docs/recipes/server-with-livereload-a
 # go to this route for examples of dashboard widgets.
 http://localhost:3000/#/example-dashboard
 
+
+# Adding controller with form binding shopping list example
+
+		## html in home.html
+		<div  ng-controller="shoppingCtrl" class="col-sm-6 m-b-20">
+		    <ul>
+		        <li ng-repeat="x in products">
+		            {{x}}
+		            <span ng-click="removeItem($index)">&times;</span>
+		        </li>
+		    </ul>
+		    <input ng-model="addMe">
+		    <button ng-click="addItem()">Add</button>
+		    <p>{{errortext}}</p>
+		</div>
+
+		##add to main.js
+		.controller("shoppingCtrl", function($scope) {
+		    $scope.products = ["Milk", "Bread", "Cheese"];
+		    $scope.addItem = function () {
+		        $scope.errortext = "";
+		        if (!$scope.addMe) {return;}
+		        if ($scope.products.indexOf($scope.addMe) == -1) {
+		            $scope.products.push($scope.addMe);
+		        } else {
+		            $scope.errortext = "The item is already in your shopping list.";
+		        }
+		    }
+		    $scope.removeItem = function (x) {
+		        $scope.errortext = "";
+		        $scope.products.splice(x, 1);
+		    } 
+		})

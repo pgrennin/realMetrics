@@ -211,7 +211,25 @@
                                     <div class="pie-title">Cap Rate</div>
                                 </div>
                             </div>
+
+                        </div> <!-- row -->
+                        
+                        <hr>
+                        <div class="row">
+                        <div  ng-controller="shoppingCtrl" class="col-sm-6 m-b-20">
+                            <ul>
+                                <li ng-repeat="x in products">
+                                    {{x}}
+                                    <span ng-click="removeItem($index)">&times;</span>
+                                </li>
+                            </ul>
+                            <input ng-model="addMe">
+                            <button ng-click="addItem()">Add</button>
+                            <p>{{errortext}}</p>
                         </div>
+                        </div> <!-- end row -->
+
+
                     </div>
                     <!--***End capitlization rate calc  -->               
                     
