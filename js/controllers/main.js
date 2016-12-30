@@ -599,73 +599,138 @@ materialAdmin
         } 
     })
 
+    // =========================================================================
+    // capRate graph 
+    // =========================================================================
 
-    .controller('MyController', function($scope) {
-      // chart data source
-      // $scope.dataSource = {
-      //   "chart": {
-      //     "caption": "Column Chart Built in Angular!",
-      //     "captionFontSize": "30",
-      //     // more chart properties - explained later
-      //   },
-      //   "data": [{
-      //       "label": "CornflowerBlue",
-      //       "value": "42"
-      //     }, //more chart data
-      //   ]
-      // };
+    .controller('capRateGraphController', function($scope) {
+      // $scope.chartValue='210000';
 
-      // # test 2
-      $scope.dataSource = {
-          "chart": {
-              "caption": "Expenditures Incurred in Publishing a Book",
-              "bgcolor": "FFFFFF",
-              "showvalues": "1",
-              "showpercentvalues": "1",
-              "showborder": "0",
-              "showplotborder": "0",
-              "showlegend": "1",
-              "legendborder": "0",
-              "legendposition": "bottom",
-              "enablesmartlabels": "1",
-              "use3dlighting": "0",
-              "showshadow": "0",
-              "legendbgcolor": "#CCCCCC",
-              "legendbgalpha": "20",
-              "legendborderalpha": "0",
-              "legendshadow": "0",
-              "legendnumcolumns": "3",
-              "palettecolors": "#f8bd19,#e44a00,#008ee4,#33bdda,#6baa01,#583e78"
-          },
-          "data": [
-              {
-                  "label": "Paper Cost",
-                  "value": "25"
-              },
-              {
-                  "label": "Binding",
-                  "value": "20"
-              },
-              {
-                  "label": "Printing Cost",
-                  "value": "20"
-              },
-              {
-                  "label": "Royality",
-                  "value": "15"
-              },
-              {
-                  "label": "Transportation Cost",
-                  "value": "10"
-              },
-              {
-                  "label": "Promotion Cost",
-                  "value": "10"
-              }
-          ]
-      };
+      $scope.chartValue='210000';
+
+       $scope.$watch("chartValue", function(newValue, oldValue) {
+         if ($scope.chartValue.length > 0) {
+            // $scope.greeting = "Greetings " + $scope.name;
 
 
 
-    })
+         }
+       });
+
+        $scope.dataSource = {
+            "chart": {
+                "manageresize": "1",
+                "origw": "400",
+                "origh": "250",
+                "managevalueoverlapping": "1",
+                "autoaligntickvalues": "1",
+                "bgcolor": "AEC0CA,FFFFFF",
+                "fillangle": "45",
+                "upperlimit": "2500000",
+                "lowerlimit": "1600000",
+                "majortmnumber": "10",
+                "majortmheight": "8",
+                "showgaugeborder": "0",
+                "gaugeouterradius": "140",
+                "gaugeoriginx": "205",
+                "gaugeoriginy": "206",
+                "gaugeinnerradius": "2",
+                "formatnumberscale": "1",
+                "numberprefix": "$",
+                "decmials": "2",
+                "tickmarkdecimals": "1",
+                "pivotradius": "17",
+                "showpivotborder": "1",
+                "pivotbordercolor": "000000",
+                "pivotborderthickness": "5",
+                "pivotfillmix": "FFFFFF,000000",
+                "tickvaluedistance": "10",
+                "showborder": "0"
+            },
+            "colorrange": {
+                "color": [
+                    {
+                        "minvalue": "1600000",
+                        "maxvalue": "1930000",
+                        "code": "399E38"
+                    },
+                    {
+                        "minvalue": "1930000",
+                        "maxvalue": "2170000",
+                        "code": "E48739"
+                    },
+                    {
+                        "minvalue": "2170000",
+                        "maxvalue": "2500000",
+                        "code": "B41527"
+                    }
+                ]
+            },
+            "dials": {
+                "dial": [
+                    {
+                        // **valule
+                        "value": $scope.chartValue,
+                        "borderalpha": "0",
+                        "bgcolor": "000000",
+                        "basewidth": "28",
+                        "topwidth": "1",
+                        "radius": "130"
+                    }
+                ]
+            },
+            "annotations": {
+                "groups": [
+                    {
+                        "x": "205",
+                        "y": "207.5",
+                        "items": [
+                            {
+                                "type": "circle",
+                                "x": "0",
+                                "y": "2.5",
+                                "radius": "150",
+                                "startangle": "0",
+                                "endangle": "180",
+                                "fillpattern": "linear",
+                                "fillasgradient": "1",
+                                "fillcolor": "dddddd,666666",
+                                "fillalpha": "100,100",
+                                "fillratio": "50,50",
+                                "fillangle": "0",
+                                "showborder": "1",
+                                "bordercolor": "444444",
+                                "borderthickness": "2"
+                            },
+                            {
+                                "type": "circle",
+                                "x": "0",
+                                "y": "0",
+                                "radius": "145",
+                                "startangle": "0",
+                                "endangle": "180",
+                                "fillpattern": "linear",
+                                "fillasgradient": "1",
+                                "fillcolor": "666666,ffffff",
+                                "fillalpha": "100,100",
+                                "fillratio": "50,50",
+                                "fillangle": "0"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }       
+
+    
+
+      
+
+
+      
+      
+
+
+
+    }) //end controller
 
