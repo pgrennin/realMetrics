@@ -1,3 +1,6 @@
+# Get running 
+cd /Users/pgrennin/Dropbox/programs/realmetrics
+
 # Start server
 gulp serve 
 
