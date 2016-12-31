@@ -191,7 +191,7 @@
                                 <div class="col-sm-6 m-b-20">
                                     <div class="form-group fg-line">
                                         <label>net operating income</label>
-                                        <input type="number" class="form-control"  placeholder="$" ng-model="noi">
+                                        <input type="number" class="form-control"  placeholder="$" ng-model="noi" ng-change="calcCapRate()">
 
                                     </div>
                                 </div>
@@ -206,13 +206,28 @@
 
                             </div>
 
-                            <div class="p-t-20 p-b-20 text-center">
+                            <!-- <div class="p-t-20 p-b-20 text-center">
                                 <div id="capRatePie" class="easy-pie sub-pie-1" data-percent="50" data-easypie-chart>
                                     <div class="percent">{{(noi/value)*100 |number:2}}</div>
                                     <div class="pie-title">Cap Rate</div>
                                     <p>noi calculated function:{{capRateCalculated}}</p>
                                 </div>
+                            </div> -->
+
+                            <!-- Add google chart Cap rate -->
+                            <!-- TEST Google Charts -->
+                            <!-- <hr> -->
+                            <div class="row">
+
+                            <!-- <input type="number" ng-model="onions[1].v" class="ng-valid ng-dirty ng-valid-number ng-touched" ng-change="calcCapRate()"> -->
+                            <div  class="col-sm-12 m-b-20">
+                                <div google-chart chart="myChartObject" style="height:600px; width:100%;"></div>
+                                <!-- <p>chart property:{{myChartObject.data.rows[0].c[1]}}</p> -->
+                                <!-- <div google-chart chart="myChartObject" id='googleChart1' style="height:600px; width:100%;"></div> -->
+
+                                <!-- <div id="piechart_3d" style="width: 900px; height: 500px;"></div> -->
                             </div>
+                            </div> <!-- end row -->
 
                         </div> <!-- row -->
                         

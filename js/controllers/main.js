@@ -615,116 +615,116 @@ materialAdmin
        //   }
        // });
 
-        $scope.dataSource = {
-            "chart": {
-                "manageresize": "1",
-                "origw": "400",
-                "origh": "250",
-                "managevalueoverlapping": "1",
-                "autoaligntickvalues": "1",
-                "bgcolor": "AEC0CA,FFFFFF",
-                "fillangle": "45",
-                "upperlimit": "100",
-                "lowerlimit": "0",
-                "majortmnumber": "10",
-                "majortmheight": "8",
-                "showgaugeborder": "0",
-                "gaugeouterradius": "140",
-                "gaugeoriginx": "205",
-                "gaugeoriginy": "206",
-                "gaugeinnerradius": "2",
-                "formatnumberscale": "1",
-                "numberprefix": "",
-                "decmials": "2",
-                "tickmarkdecimals": "1",
-                "pivotradius": "17",
-                "showpivotborder": "1",
-                "pivotbordercolor": "000000",
-                "pivotborderthickness": "5",
-                "pivotfillmix": "FFFFFF,000000",
-                "tickvaluedistance": "10",
-                "showborder": "0"
-            },
-            "colorrange": {
-                "color": [
-                    {
-                        "minvalue": "0",
-                        "maxvalue": "10",
-                        "code": "B41527"
-                    },
-                    {
-                        "minvalue": "20",
-                        "maxvalue": "30",
-                        "code": "E48739"
-                    },
-                    {
-                        "minvalue": "30",
-                        "maxvalue": "40",
-                        "code": "399E38"
-                    }
-                ]
-            },
-            "dials": {
-                "dial": [
-                    {
-                        // **value
-                        "value": '0',
-                        "borderalpha": "0",
-                        "bgcolor": "000000",
-                        "basewidth": "28",
-                        "topwidth": "1",
-                        "radius": "130"
-                    }
-                ]
-            },
-            "annotations": {
-                "groups": [
-                    {
-                        "x": "205",
-                        "y": "207.5",
-                        "items": [
-                            {
-                                "type": "circle",
-                                "x": "0",
-                                "y": "2.5",
-                                "radius": "150",
-                                "startangle": "0",
-                                "endangle": "180",
-                                "fillpattern": "linear",
-                                "fillasgradient": "1",
-                                "fillcolor": "dddddd,666666",
-                                "fillalpha": "100,100",
-                                "fillratio": "50,50",
-                                "fillangle": "0",
-                                "showborder": "1",
-                                "bordercolor": "444444",
-                                "borderthickness": "2"
-                            },
-                            {
-                                "type": "circle",
-                                "x": "0",
-                                "y": "0",
-                                "radius": "145",
-                                "startangle": "0",
-                                "endangle": "180",
-                                "fillpattern": "linear",
-                                "fillasgradient": "1",
-                                "fillcolor": "666666,ffffff",
-                                "fillalpha": "100,100",
-                                "fillratio": "50,50",
-                                "fillangle": "0"
-                            }
-                        ]
-                    }
-                ]
-            }
-        }
+        // $scope.dataSource = {
+        //     "chart": {
+        //         "manageresize": "1",
+        //         "origw": "400",
+        //         "origh": "250",
+        //         "managevalueoverlapping": "1",
+        //         "autoaligntickvalues": "1",
+        //         "bgcolor": "AEC0CA,FFFFFF",
+        //         "fillangle": "45",
+        //         "upperlimit": "100",
+        //         "lowerlimit": "0",
+        //         "majortmnumber": "10",
+        //         "majortmheight": "8",
+        //         "showgaugeborder": "0",
+        //         "gaugeouterradius": "140",
+        //         "gaugeoriginx": "205",
+        //         "gaugeoriginy": "206",
+        //         "gaugeinnerradius": "2",
+        //         "formatnumberscale": "1",
+        //         "numberprefix": "",
+        //         "decmials": "2",
+        //         "tickmarkdecimals": "1",
+        //         "pivotradius": "17",
+        //         "showpivotborder": "1",
+        //         "pivotbordercolor": "000000",
+        //         "pivotborderthickness": "5",
+        //         "pivotfillmix": "FFFFFF,000000",
+        //         "tickvaluedistance": "10",
+        //         "showborder": "0"
+        //     },
+        //     "colorrange": {
+        //         "color": [
+        //             {
+        //                 "minvalue": "0",
+        //                 "maxvalue": "10",
+        //                 "code": "B41527"
+        //             },
+        //             {
+        //                 "minvalue": "20",
+        //                 "maxvalue": "30",
+        //                 "code": "E48739"
+        //             },
+        //             {
+        //                 "minvalue": "30",
+        //                 "maxvalue": "40",
+        //                 "code": "399E38"
+        //             }
+        //         ]
+        //     },
+        //     "dials": {
+        //         "dial": [
+        //             {
+        //                 // **value
+        //                 "value": '0',
+        //                 "borderalpha": "0",
+        //                 "bgcolor": "000000",
+        //                 "basewidth": "28",
+        //                 "topwidth": "1",
+        //                 "radius": "130"
+        //             }
+        //         ]
+        //     },
+        //     "annotations": {
+        //         "groups": [
+        //             {
+        //                 "x": "205",
+        //                 "y": "207.5",
+        //                 "items": [
+        //                     {
+        //                         "type": "circle",
+        //                         "x": "0",
+        //                         "y": "2.5",
+        //                         "radius": "150",
+        //                         "startangle": "0",
+        //                         "endangle": "180",
+        //                         "fillpattern": "linear",
+        //                         "fillasgradient": "1",
+        //                         "fillcolor": "dddddd,666666",
+        //                         "fillalpha": "100,100",
+        //                         "fillratio": "50,50",
+        //                         "fillangle": "0",
+        //                         "showborder": "1",
+        //                         "bordercolor": "444444",
+        //                         "borderthickness": "2"
+        //                     },
+        //                     {
+        //                         "type": "circle",
+        //                         "x": "0",
+        //                         "y": "0",
+        //                         "radius": "145",
+        //                         "startangle": "0",
+        //                         "endangle": "180",
+        //                         "fillpattern": "linear",
+        //                         "fillasgradient": "1",
+        //                         "fillcolor": "666666,ffffff",
+        //                         "fillalpha": "100,100",
+        //                         "fillratio": "50,50",
+        //                         "fillangle": "0"
+        //                     }
+        //                 ]
+        //             }
+        //         ]
+        //     }
+        // }
 
 
-        $scope.updateChart = function () {
-            // $scope.errortext = "";
-            $scope.dataSource.dials.dial.value='2000000';
-        }
+        // $scope.updateChart = function () {
+        //     // $scope.errortext = "";
+        //     $scope.dataSource.dials.dial.value='2000000';
+        // }
 
         // $scope.pieChartPercent = ($scope.noi/$scope.value)*100;
         // alert($scope.pieChartPercent);
@@ -741,12 +741,86 @@ materialAdmin
         // );
 
         // create function to caclulate cap rate
+        // $scope.noi=1;
+        // $scope.value=1;
+        // $scope.capRateCalculated=1
 
         $scope.calcCapRate = function () {
             $scope.capRateCalculated = ($scope.noi/$scope.value)*100;
+
             // assign calculated value to data in chart
-            $scope.dataSource.dials.dial[0].value =  $scope.capRateCalculated;
+            // $scope.myChartObject.data.rows[0].c[1] =  $scope.capRateCalculated;
+            
+            // update graph values
+            $scope.valueGraph[1].v = $scope.value;
+            $scope.noiGraph[1].v = $scope.noi;
+
         }
+
+        // updateNoi
+
+        // $scope.calcCapRate = function () {
+        //     $scope.capRateCalculated = ($scope.noi/$scope.value)*100;
+
+        //     // assign calculated value to data in chart
+        //     // $scope.myChartObject.data.rows[0].c[1] =  $scope.capRateCalculated;
+            
+        //     // update graph values
+        //     $scope.valueGraph[1].v = $scope.value;
+        //     $scope.noiGraph[1].v = $scope.noiGraph;
+
+        // }
+
+
+        // google chart
+        $scope.myChartObject = {};
+        
+        $scope.myChartObject.type = "PieChart";
+        
+        $scope.valueGraph = [
+            {v: "value"},
+            {v: 1},
+        ];
+
+        $scope.noiGraph = [
+            {v: "noi"},
+            {v: 1},
+        ];
+
+
+        $scope.myChartObject.data = {"cols": [
+            {id: "t", label: "Topping", type: "string"},
+            {id: "s", label: "Slices", type: "number"}
+        ], "rows": [
+            // {c: [
+            //     {v: "Mushrooms"},
+            //     {v: 3},
+            // ]},
+            {c: $scope.valueGraph},
+            {c: $scope.noiGraph}
+            // {c: [
+            //     {v: "Olives"},
+            //     {v: 31}
+            // ]}
+            // {c: [
+            //     {v: "Zucchini"},
+            //     {v: 1},
+            // ]},
+            // {c: [
+            //     {v: "Pepperoni"},
+            //     {v: 2},
+            // ]}
+        ]};
+
+        $scope.myChartObject.options = {
+            'title': 'How Much Pizza I Ate Last Night'
+        };
+
+
+
+       
+
+
 
 
         // $scope.addItem = function () {
@@ -766,41 +840,41 @@ materialAdmin
     }) //end controller
 
     // Google chart controller
-    .controller("googleChartController", function ($scope) {
-        $scope.myChartObject = {};
+    // .controller("googleChartController", function ($scope) {
+    //     $scope.myChartObject = {};
         
-        $scope.myChartObject.type = "PieChart";
+    //     $scope.myChartObject.type = "PieChart";
         
-        $scope.onions = [
-            {v: "Onions"},
-            {v: 3},
-        ];
+    //     $scope.onions = [
+    //         {v: "Onions"},
+    //         {v: 3},
+    //     ];
 
-        $scope.myChartObject.data = {"cols": [
-            {id: "t", label: "Topping", type: "string"},
-            {id: "s", label: "Slices", type: "number"}
-        ], "rows": [
-            {c: [
-                {v: "Mushrooms"},
-                {v: 3},
-            ]},
-            {c: $scope.onions},
-            {c: [
-                {v: "Olives"},
-                {v: 31}
-            ]},
-            {c: [
-                {v: "Zucchini"},
-                {v: 1},
-            ]},
-            {c: [
-                {v: "Pepperoni"},
-                {v: 2},
-            ]}
-        ]};
+    //     $scope.myChartObject.data = {"cols": [
+    //         {id: "t", label: "Topping", type: "string"},
+    //         {id: "s", label: "Slices", type: "number"}
+    //     ], "rows": [
+    //         {c: [
+    //             {v: "Mushrooms"},
+    //             {v: 3},
+    //         ]},
+    //         {c: $scope.onions},
+    //         {c: [
+    //             {v: "Olives"},
+    //             {v: 31}
+    //         ]},
+    //         {c: [
+    //             {v: "Zucchini"},
+    //             {v: 1},
+    //         ]},
+    //         {c: [
+    //             {v: "Pepperoni"},
+    //             {v: 2},
+    //         ]}
+    //     ]};
 
-        $scope.myChartObject.options = {
-            'title': 'How Much Pizza I Ate Last Night'
-        };
-    });
+    //     $scope.myChartObject.options = {
+    //         'title': 'How Much Pizza I Ate Last Night'
+    //     };
+    // });
 
