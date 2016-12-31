@@ -50,6 +50,5 @@ http://localhost:3000/#/example-dashboard
 
 # How to add charts
 
-https://davidwalsh.name/angular-charts
-
-http://www.fusioncharts.com/dev/api/fusioncharts/fusioncharts-events.html#event-dataUpdated
+I'm currently using google charts
+http://angular-google-chart.github.io/angular-google-chart/docs/latest/examples/

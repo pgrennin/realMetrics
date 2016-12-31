@@ -604,289 +604,109 @@ materialAdmin
     // =========================================================================
 
     .controller('capRateGraphController', function($scope) {
-      // $scope.chartValue='210000';
+        // default values
+        $scope.valueMaster=100000;
+        $scope.noiMaster=10000;
+        $scope.capRateCalculatedMaster=10;
 
-      // $scope.$watch('myModel', function() { ... }, true);
+        // Reset the default values of the form
+        $scope.reset = function() {
+                $scope.value = angular.copy($scope.valueMaster);
+                $scope.noi = angular.copy($scope.noiMaster);
+                $scope.capRateCalculated= angular.copy($scope.capRateCalculatedMaster);
+            };
+        $scope.reset();
 
-       // $scope.$watch("chartValue", function(newValue, oldValue) {
-       //   if ($scope.chartValue.length > 0) {
-       //      // $scope.greeting = "Greetings " + $scope.name
-
-       //   }
-       // });
-
-        // $scope.dataSource = {
-        //     "chart": {
-        //         "manageresize": "1",
-        //         "origw": "400",
-        //         "origh": "250",
-        //         "managevalueoverlapping": "1",
-        //         "autoaligntickvalues": "1",
-        //         "bgcolor": "AEC0CA,FFFFFF",
-        //         "fillangle": "45",
-        //         "upperlimit": "100",
-        //         "lowerlimit": "0",
-        //         "majortmnumber": "10",
-        //         "majortmheight": "8",
-        //         "showgaugeborder": "0",
-        //         "gaugeouterradius": "140",
-        //         "gaugeoriginx": "205",
-        //         "gaugeoriginy": "206",
-        //         "gaugeinnerradius": "2",
-        //         "formatnumberscale": "1",
-        //         "numberprefix": "",
-        //         "decmials": "2",
-        //         "tickmarkdecimals": "1",
-        //         "pivotradius": "17",
-        //         "showpivotborder": "1",
-        //         "pivotbordercolor": "000000",
-        //         "pivotborderthickness": "5",
-        //         "pivotfillmix": "FFFFFF,000000",
-        //         "tickvaluedistance": "10",
-        //         "showborder": "0"
-        //     },
-        //     "colorrange": {
-        //         "color": [
-        //             {
-        //                 "minvalue": "0",
-        //                 "maxvalue": "10",
-        //                 "code": "B41527"
-        //             },
-        //             {
-        //                 "minvalue": "20",
-        //                 "maxvalue": "30",
-        //                 "code": "E48739"
-        //             },
-        //             {
-        //                 "minvalue": "30",
-        //                 "maxvalue": "40",
-        //                 "code": "399E38"
-        //             }
-        //         ]
-        //     },
-        //     "dials": {
-        //         "dial": [
-        //             {
-        //                 // **value
-        //                 "value": '0',
-        //                 "borderalpha": "0",
-        //                 "bgcolor": "000000",
-        //                 "basewidth": "28",
-        //                 "topwidth": "1",
-        //                 "radius": "130"
-        //             }
-        //         ]
-        //     },
-        //     "annotations": {
-        //         "groups": [
-        //             {
-        //                 "x": "205",
-        //                 "y": "207.5",
-        //                 "items": [
-        //                     {
-        //                         "type": "circle",
-        //                         "x": "0",
-        //                         "y": "2.5",
-        //                         "radius": "150",
-        //                         "startangle": "0",
-        //                         "endangle": "180",
-        //                         "fillpattern": "linear",
-        //                         "fillasgradient": "1",
-        //                         "fillcolor": "dddddd,666666",
-        //                         "fillalpha": "100,100",
-        //                         "fillratio": "50,50",
-        //                         "fillangle": "0",
-        //                         "showborder": "1",
-        //                         "bordercolor": "444444",
-        //                         "borderthickness": "2"
-        //                     },
-        //                     {
-        //                         "type": "circle",
-        //                         "x": "0",
-        //                         "y": "0",
-        //                         "radius": "145",
-        //                         "startangle": "0",
-        //                         "endangle": "180",
-        //                         "fillpattern": "linear",
-        //                         "fillasgradient": "1",
-        //                         "fillcolor": "666666,ffffff",
-        //                         "fillalpha": "100,100",
-        //                         "fillratio": "50,50",
-        //                         "fillangle": "0"
-        //                     }
-        //                 ]
-        //             }
-        //         ]
-        //     }
-        // }
-
-
-        // $scope.updateChart = function () {
-        //     // $scope.errortext = "";
-        //     $scope.dataSource.dials.dial.value='2000000';
-        // }
-
-        // $scope.pieChartPercent = ($scope.noi/$scope.value)*100;
-        // alert($scope.pieChartPercent);
-
-        // updaate the data-percen property of pie chart
-        // var el =angular.element('#capRatePie');
-        // el.attr('data-percent', ($scope.noi/$scope.value)*100);
-        // $compile('#capRatePie')(scope);
-
-        // $("#capRatePie").html(
-        //   $compile(
-        //     "<div id='capRatePie' class='easy-pie sub-pie-1' data-percent='{{(noi/value)*100 |number:2}}'  data-easypie-chart>"
-        //   )(scope)
-        // );
-
-        // create function to caclulate cap rate
-        // $scope.noi=1;
-        // $scope.value=1;
-        // $scope.capRateCalculated=1
-
-        // $scope.value=1;
-        // $scope.noi=1;
-        // $scope.capRateCalculated=1;
-
+        // Calculate the cap rate
         $scope.calcCapRate = function () {
             $scope.capRateCalculated = ($scope.noi/$scope.value)*100;
-
-            // assign calculated value to data in chart
-            // $scope.myChartObject.data.rows[0].c[1] =  $scope.capRateCalculated;
-            
             // update graph values
-            $scope.valueGraph[1].v = $scope.value;
-            $scope.noiGraph[1].v = $scope.noi;
-            $scope.capRateGraph[1].v = $scope.capRateCalculated;
+            // $scope.valueGraph[1].v = $scope.value;
+            // $scope.noiGraph[1].v = $scope.noi;
+            // $scope.capRateGraph[1].v = $scope.capRateCalculated;
 
-
+            // Assign calculated value to gaugeCapRate
+            $scope.gaugeCapRate[1]=$scope.capRateCalculated;
         }
 
-        // updateNoi
-
-        // $scope.calcCapRate = function () {
-        //     $scope.capRateCalculated = ($scope.noi/$scope.value)*100;
-
-        //     // assign calculated value to data in chart
-        //     // $scope.myChartObject.data.rows[0].c[1] =  $scope.capRateCalculated;
-            
-        //     // update graph values
-        //     $scope.valueGraph[1].v = $scope.value;
-        //     $scope.noiGraph[1].v = $scope.noiGraph;
-
-        // }
-
-
-        // google chart
-        $scope.myChartObject = {};
+        // // google chart pie chart example
+        // $scope.myChartObject = {};
         
-        $scope.myChartObject.type = "PieChart";
+        // $scope.myChartObject.type = "PieChart";
         
-        $scope.valueGraph = [
-            {v: "value"},
-            {v: 1},
-        ];
+        // $scope.valueGraph = [
+        //     {v: "value"},
+        //     {v: 1},
+        // ];
 
-        $scope.noiGraph = [
-            {v: "noi"},
-            {v: 1},
-        ];
+        // $scope.noiGraph = [
+        //     {v: "noi"},
+        //     {v: 1},
+        // ];
 
-        $scope.capRateGraph = [
-            {v: "cap rate"},
-            {v: 1},
-        ];
+        // $scope.capRateGraph = [
+        //     {v: "cap rate"},
+        //     {v: 1},
+        // ];
 
+        // $scope.myChartObject.data = {"cols": [
+        //     {id: "t", label: "Topping", type: "string"},
+        //     {id: "s", label: "Slices", type: "number"}
+        // ], "rows": [
+        //     // {c: [
+        //     //     {v: "Mushrooms"},
+        //     //     {v: 3},
+        //     // ]},
+        //     {c: $scope.valueGraph},
+        //     {c: $scope.noiGraph},
+        //     {c: $scope.capRateGraph}
+        //     // {c: [
+        //     //     {v: "Olives"},
+        //     //     {v: 31}
+        //     // ]}
+        //     // {c: [
+        //     //     {v: "Zucchini"},
+        //     //     {v: 1},
+        //     // ]},
+        //     // {c: [
+        //     //     {v: "Pepperoni"},
+        //     //     {v: 2},
+        //     // ]}
+        // ]};
 
-        $scope.myChartObject.data = {"cols": [
-            {id: "t", label: "Topping", type: "string"},
-            {id: "s", label: "Slices", type: "number"}
-        ], "rows": [
-            // {c: [
-            //     {v: "Mushrooms"},
-            //     {v: 3},
-            // ]},
-            {c: $scope.valueGraph},
-            {c: $scope.noiGraph},
-            {c: $scope.capRateGraph}
-            // {c: [
-            //     {v: "Olives"},
-            //     {v: 31}
-            // ]}
-            // {c: [
-            //     {v: "Zucchini"},
-            //     {v: 1},
-            // ]},
-            // {c: [
-            //     {v: "Pepperoni"},
-            //     {v: 2},
-            // ]}
-        ]};
-
-        $scope.myChartObject.options = {
-            'title': 'Cap Rate'
-        };
-
-
-
-       
+        // $scope.myChartObject.options = {
+        //     'title': 'Cap Rate'
+        // };
 
 
 
+        // gauge google
+        $scope.gaugeChartObject = {};
+        $scope.gaugeChartObject.type = "Gauge";
 
-        // $scope.addItem = function () {
-        //     $scope.errortext = "";
-        //     if (!$scope.addMe) {return;}
-        //     if ($scope.products.indexOf($scope.addMe) == -1) {
-        //         $scope.products.push($scope.addMe);
-        //     } else {
-        //         $scope.errortext = "The item is already in your shopping list.";
-        //     }
-        // }
-        // $scope.removeItem = function (x) {
-        //     $scope.errortext = "";
-        //     $scope.products.splice(x, 1);
-        // } 
+       $scope.gaugeChartObject.options = {
+         width: 400,
+         height: 180,
+         redFrom: 0,
+         redTo: 5,
+         yellowFrom: 6,
+         yellowTo: 10,
+         minorTicks: 5
+       };
+
+       // Set default value
+       $scope.gaugeCapRate=['cap rate', 10];
+
+       $scope.gaugeChartObject.data = [
+         ['Label', 'Value'],
+         $scope.gaugeCapRate
+         // ['CPU', 55]
+         // ['Network', 68]
+       ];
+
+        // calculate cap rate at page load
+        $scope.calcCapRate();
 
     }) //end controller
 
-    // Google chart controller
-    // .controller("googleChartController", function ($scope) {
-    //     $scope.myChartObject = {};
-        
-    //     $scope.myChartObject.type = "PieChart";
-        
-    //     $scope.onions = [
-    //         {v: "Onions"},
-    //         {v: 3},
-    //     ];
-
-    //     $scope.myChartObject.data = {"cols": [
-    //         {id: "t", label: "Topping", type: "string"},
-    //         {id: "s", label: "Slices", type: "number"}
-    //     ], "rows": [
-    //         {c: [
-    //             {v: "Mushrooms"},
-    //             {v: 3},
-    //         ]},
-    //         {c: $scope.onions},
-    //         {c: [
-    //             {v: "Olives"},
-    //             {v: 31}
-    //         ]},
-    //         {c: [
-    //             {v: "Zucchini"},
-    //             {v: 1},
-    //         ]},
-    //         {c: [
-    //             {v: "Pepperoni"},
-    //             {v: 2},
-    //         ]}
-    //     ]};
-
-    //     $scope.myChartObject.options = {
-    //         'title': 'How Much Pizza I Ate Last Night'
-    //     };
-    // });
-
+    

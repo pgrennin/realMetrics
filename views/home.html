@@ -50,10 +50,10 @@
 
 
             <!-- Begin 1st Row of Mini Charts -->
-            <div class="mini-charts">
-                <div class="row">
+            <!-- <div class="mini-charts">
+                <div class="row"> -->
 
-                    <div class="col-sm-6 col-md-3">
+                    <!-- <div class="col-sm-4 col-md-2">
                     <div class="mini-charts-item bgm-teal">
                         <div class="clearfix">
                             <div class="chart chart-pie stats-pie" data-sparkline-pie></div>
@@ -65,7 +65,7 @@
                     </div>
                     </div>
 
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-4 col-md-2">
                         <div class="mini-charts-item bgm-bluegray">
                             <div class="clearfix">
                                 <div class="chart stats-bar-2" data-sparkline-bar></div>
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- <div class="col-sm-6 col-md-3">
                         <div class="mini-charts-item bgm-bluegray">
@@ -101,8 +101,8 @@
                         </div>
                     </div> -->
 
-                </div> <!-- end row -->
-            </div> <!-- end  minicharts row -->
+                <!-- </div> --> <!-- end row -->
+            <!-- </div> --> <!-- end  minicharts row -->
 
             <!-- Begin 2nd Row of Mini Charts -->
             <!-- <div class="mini-charts">
@@ -164,10 +164,11 @@
                     
                     <!--***Begin capitlization rate calc  -->
                     <div ng-controller="capRateGraphController">
-
                     <div class="card">
                         <div class="card-header ch-alt m-b-20">
-                            <h2>Capitalization Rate <small>Phasellus condimentum ipsum id auctor imperdie</small></h2>
+                            <h2>capitalization rate <small>The capitalization rate is the rate of return on a real estate investment property based on the income that the property is expected to generate. The capitalization rate is used to estimate the investor's potential return on his or her investment.
+                            </small></h2>
+
                             <ul class="actions">
                                 <li class="dropdown" uib-dropdown>
                                     <a href="" uib-dropdown-toggle>
@@ -176,7 +177,10 @@
 
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li>
-                                            <a href="">Reset</a>
+                                            <a href="" ng-click="reset()">reset</a>
+                                        </li>
+                                        <li>
+                                            <a href="">information about this metric</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -185,6 +189,19 @@
                         </div>
     
                         <div class="card-body card-padding">
+
+
+                            <div class="row">
+                            <div class="col-sm-6 m-b-20">
+                                <div class="form-group fg-line f-16">
+                                    <label><strong>cap rate: {{capRateCalculated |number:1}}%</strong></label>
+                                </div>
+                            </div>
+                            </div> <!-- end row -->
+
+
+
+
                             <div class="row">
                                 <form>
 
@@ -214,41 +231,45 @@
                                 </div>
                             </div> -->
 
+                            <div class="row">
+                            <div  class="col-sm-3 m-b-20"></div>
+                            <div  class="col-sm-4 m-b-20">
+                                <div google-chart chart="gaugeChartObject" style="height:200px; width:100%;"></div>
+                            </div>
+                            <div  class="col-sm-3 m-b-20"></div>
+                            </div> <!-- end row -->
+
                             <!-- Add google chart Cap rate -->
                             <!-- TEST Google Charts -->
                             <!-- <hr> -->
-                            <div class="row">
-
-                            <!-- <input type="number" ng-model="onions[1].v" class="ng-valid ng-dirty ng-valid-number ng-touched" ng-change="calcCapRate()"> -->
+                            <!-- <div class="row">
                             <div  class="col-sm-12 m-b-20">
                                 <div google-chart chart="myChartObject" style="height:600px; width:100%;"></div>
-                                <!-- <p>chart property:{{myChartObject.data.rows[0].c[1]}}</p> -->
-                                <!-- <div google-chart chart="myChartObject" id='googleChart1' style="height:600px; width:100%;"></div> -->
-
-                                <!-- <div id="piechart_3d" style="width: 900px; height: 500px;"></div> -->
                             </div>
-                            </div> <!-- end row -->
+                            </div> --> <!-- end row -->
+
+
 
                         </div> <!-- row -->
                         
                        
 
-                        <div class="row">
+                        <!-- <div class="row"> -->
 
                         
-                            <p>chart value from scope: {{dataSource.dials.dial[0].value}}</p>
+<!--                             <p>chart value from scope: {{dataSource.dials.dial[0].value}}</p>
                             <form name="capRateForm1">
                             <input name="value" type="number" class="form-control" placeholder="$" ng-model="dataSource.dials.dial[0].value">
                             </form>
 
-                            <!-- <button ng-click="updateChart()">Update Chart</button> -->
+ -->                            <!-- <button ng-click="updateChart()">Update Chart</button> -->
 
                             <!-- show chart if form touched -->
                             <!-- <span ng-show="capRateForm1.value.$touched"> -->
                            
                             <!-- </span> -->
 
-                            <div id="chart-container">
+<!--                             <div id="chart-container">
                                 <fusioncharts 
                                     width= "50%"
                                     height= "200"
@@ -257,11 +278,11 @@
                                     dataSource= "{{dataSource}}">
                                 </fusioncharts>
                             </div>
-                        </div>
-                        </div> <!-- end row -->
+ -->                        </div>
+                        <!-- </div> end row -->
 
                         
-
+                        <div class="card">
                         <hr>
                         <div class="row">
                         <div  ng-controller="shoppingCtrl" class="col-sm-6 m-b-20">
@@ -277,13 +298,8 @@
                         </div>
                         </div> <!-- end row -->
 
-                        <!-- TEST Google Charts -->
-                        <hr>
-                        <div class="row">
-                        <div  ng-controller="googleChartController" class="col-sm-6 m-b-20">
-                            <div google-chart chart="myChartObject" style="height:600px; width:100%;"></div>
-                        </div>
                         </div> <!-- end row -->
+                        </div> <!-- end card -->
 
 
 

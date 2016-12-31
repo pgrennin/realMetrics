@@ -7,7 +7,7 @@ var materialAdmin = angular.module('materialAdmin', [
     'oc.lazyLoad',
     'nouislider',
     'ngTable',
-    'ng-fusioncharts',
+    // 'ng-fusioncharts',
     'googlechart'
 ])
 
