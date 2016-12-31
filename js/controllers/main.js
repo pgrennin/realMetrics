@@ -745,6 +745,10 @@ materialAdmin
         // $scope.value=1;
         // $scope.capRateCalculated=1
 
+        // $scope.value=1;
+        // $scope.noi=1;
+        // $scope.capRateCalculated=1;
+
         $scope.calcCapRate = function () {
             $scope.capRateCalculated = ($scope.noi/$scope.value)*100;
 
@@ -754,6 +758,8 @@ materialAdmin
             // update graph values
             $scope.valueGraph[1].v = $scope.value;
             $scope.noiGraph[1].v = $scope.noi;
+            $scope.capRateGraph[1].v = $scope.capRateCalculated;
+
 
         }
 
@@ -787,6 +793,11 @@ materialAdmin
             {v: 1},
         ];
 
+        $scope.capRateGraph = [
+            {v: "cap rate"},
+            {v: 1},
+        ];
+
 
         $scope.myChartObject.data = {"cols": [
             {id: "t", label: "Topping", type: "string"},
@@ -797,7 +808,8 @@ materialAdmin
             //     {v: 3},
             // ]},
             {c: $scope.valueGraph},
-            {c: $scope.noiGraph}
+            {c: $scope.noiGraph},
+            {c: $scope.capRateGraph}
             // {c: [
             //     {v: "Olives"},
             //     {v: 31}
@@ -813,7 +825,7 @@ materialAdmin
         ]};
 
         $scope.myChartObject.options = {
-            'title': 'How Much Pizza I Ate Last Night'
+            'title': 'Cap Rate'
         };
 
 
