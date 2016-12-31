@@ -1,4 +1,7 @@
 <header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include src="'template/header-image-logo.html'" data-ng-controller="headerCtrl as hctrl"></header>
+ -->
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include src="'template/header-textual-menu.html'" data-ng-controller="headerCtrl as hctrl"></header>
+
 
 
 <!-- <header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'template/header.html'" data-ng-controller="headerCtrl as hctrl"></header> -->
@@ -13,8 +16,9 @@
         <div class="container">
             <div class="block-header">
                 <h2>Dashboard</h2>
-
-                <ul class="actions">
+                
+                <!-- buttons and menus for managing widgets.  Not needed at this time. -->
+                <!-- <ul class="actions">
                     <li>
                         <a href="">
                             <i class="zmdi zmdi-trending-up"></i>
@@ -42,7 +46,7 @@
                             </li>
                         </ul>
                     </li>
-                </ul>
+                </ul> -->
 
             </div>
 
@@ -238,6 +242,18 @@
                             </div>
                             <div  class="col-sm-3 m-b-20"></div>
                             </div> <!-- end row -->
+
+
+                            
+
+                            <div class="row">
+                            <div  class="col-sm-3 m-b-20"></div>
+                            <div  class="col-sm-4 m-b-20">
+                                <button class="btn btn-primary">About this Metric</button>
+                            </div>
+                            <div  class="col-sm-3 m-b-20"></div>
+                            </div> <!-- end row -->
+
 
                             <!-- Add google chart Cap rate -->
                             <!-- TEST Google Charts -->
@@ -736,4 +752,4 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
