@@ -1,5 +1,6 @@
-<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include src="'template/header-image-logo.html'" data-ng-controller="headerCtrl as hctrl"></header>
- -->
+<!-- <header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include src="'template/header-image-logo.html'" data-ng-controller="headerCtrl as hctrl"></header>
+ --> 
+
 <header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include src="'template/header-textual-menu.html'" data-ng-controller="headerCtrl as hctrl"></header>
 
 
@@ -108,61 +109,9 @@
                 <!-- </div> --> <!-- end row -->
             <!-- </div> --> <!-- end  minicharts row -->
 
-            <!-- Begin 2nd Row of Mini Charts -->
-            <!-- <div class="mini-charts">
-                <div class="row">
-                    <div class="col-sm-6 col-md-3">
-                        <div class="mini-charts-item bgm-bluegray">
-                            <div class="clearfix">
-                                <div class="chart stats-bar" data-sparkline-bar></div>
-                                <div class="count">
-                                    <small>70% rule</small>
-                                    <h2>{{(noi/value)*100 |number:2}}%</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3">
-                        <div class="mini-charts-item bgm-bluegray">
-                            <div class="clearfix">
-                                <div class="chart stats-bar-2" data-sparkline-bar></div>
-                                <div class="count">
-                                    <small>Gross Rent Multiplier</small>
-                                    <h2>$ 100,000</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-                   <!--  <div class="col-sm-6 col-md-3">
-                        <div class="mini-charts-item bgm-bluegray">
-                            <div class="clearfix">
-                                <div class="chart stats-line" data-sparkline-line></div>
-                                <div class="count">
-                                    <small>Total Sales</small>
-                                    <h2>$ 458,778</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3">
-                        <div class="mini-charts-item bgm-bluegray">
-                            <div class="clearfix">
-                                <div class="chart stats-line-2" data-sparkline-line></div>
-                                <div class="count">
-                                    <small>Support Tickets</small>
-                                    <h2>23,856</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                <!-- </div>
-            </div> -->
-
 
             <div class="dash-widgets">
+
             <div class="row">
                 <div class="col-sm-6">
                     
@@ -189,11 +138,9 @@
                                     </ul>
                                 </li>
                             </ul>
-
                         </div>
     
                         <div class="card-body card-padding">
-
 
                             <div class="row">
                             <div class="col-sm-6 m-b-20">
@@ -202,9 +149,6 @@
                                 </div>
                             </div>
                             </div> <!-- end row -->
-
-
-
 
                             <div class="row">
                                 <form>
@@ -224,16 +168,7 @@
                                     </div>
                                 </div>                
                                 </form>
-
                             </div>
-
-                            <!-- <div class="p-t-20 p-b-20 text-center">
-                                <div id="capRatePie" class="easy-pie sub-pie-1" data-percent="50" data-easypie-chart>
-                                    <div class="percent">{{(noi/value)*100 |number:2}}</div>
-                                    <div class="pie-title">Cap Rate</div>
-                                    <p>noi calculated function:{{capRateCalculated}}</p>
-                                </div>
-                            </div> -->
 
                             <div class="row">
                             <div  class="col-sm-3 m-b-20"></div>
@@ -243,61 +178,19 @@
                             <div  class="col-sm-3 m-b-20"></div>
                             </div> <!-- end row -->
 
-
-                            
-
                             <div class="row">
                             <div  class="col-sm-3 m-b-20"></div>
                             <div  class="col-sm-4 m-b-20">
-                                <button class="btn btn-primary">About this Metric</button>
+                                <a class="btn btn-primary" href="#/net-cap-rate">About this Metric</a>
                             </div>
                             <div  class="col-sm-3 m-b-20"></div>
                             </div> <!-- end row -->
 
 
-                            <!-- Add google chart Cap rate -->
-                            <!-- TEST Google Charts -->
-                            <!-- <hr> -->
-                            <!-- <div class="row">
-                            <div  class="col-sm-12 m-b-20">
-                                <div google-chart chart="myChartObject" style="height:600px; width:100%;"></div>
-                            </div>
-                            </div> --> <!-- end row -->
-
-
-
                         </div> <!-- row -->
+                        </div>
                         
-                       
-
-                        <!-- <div class="row"> -->
-
-                        
-<!--                             <p>chart value from scope: {{dataSource.dials.dial[0].value}}</p>
-                            <form name="capRateForm1">
-                            <input name="value" type="number" class="form-control" placeholder="$" ng-model="dataSource.dials.dial[0].value">
-                            </form>
-
- -->                            <!-- <button ng-click="updateChart()">Update Chart</button> -->
-
-                            <!-- show chart if form touched -->
-                            <!-- <span ng-show="capRateForm1.value.$touched"> -->
-                           
-                            <!-- </span> -->
-
-<!--                             <div id="chart-container">
-                                <fusioncharts 
-                                    width= "50%"
-                                    height= "200"
-                                    type= "angulargauge"
-                                    dataFormat= "json"
-                                    dataSource= "{{dataSource}}">
-                                </fusioncharts>
-                            </div>
- -->                        </div>
-                        <!-- </div> end row -->
-
-                        
+                        <!-- TEST CARD -->
                         <div class="card">
                         <hr>
                         <div class="row">

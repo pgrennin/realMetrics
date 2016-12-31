@@ -550,4 +550,13 @@ materialAdmin
                 url: '/example-dashboard',
                 templateUrl: 'views/example-dashboard.html'
             })
+
+            //------------------------------
+            // Metric - Net Capitalization Rate
+            //------------------------------
+            
+            .state ('net-cap-rate', {
+                url: '/net-cap-rate',
+                templateUrl: 'views/net-cap-rate.html'
+            })
     });
