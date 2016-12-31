@@ -154,19 +154,48 @@
                                 <form>
 
                                 <div class="col-sm-6 m-b-20">
-                                    <div class="form-group fg-line">
-                                        <label>net operating income</label>
-                                        <input type="number" class="form-control"  placeholder="$" ng-model="noi" ng-change="calcCapRate()">
-
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="zmdi zmdi-money"></i></span>
+                                    <label>net operating income</label>
+                                    <div class="fg-line">
+                                        <input type="number" class="form-control" placeholder="" ng-model="noi" ng-change="calcCapRate()">
                                     </div>
+                                    <span class="input-group-addon last"><i class="zmdi"></i></span>
+                                </div>
                                 </div>
 
                                 <div class="col-sm-6 m-b-20">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="zmdi zmdi-money"></i></span>
+                                    <div class="fg-line">
+                                        <label>value</label>
+                                        <input type="number" class="form-control" placeholder="" ng-model="value" ng-change="calcCapRate()">
+                                    </div>
+                                    <span class="input-group-addon last"><i class="zmdi"></i></span>
+                                </div>
+                                </div>
+
+
+                               <!--  <div class="col-sm-6 m-b-20">
+                                    <div class="form-group fg-line">
+                                        <label>net operating income</label>
+                                        <input type="number" class="form-control"  placeholder="$" ng-model="noi" ng-change="calcCapRate()">
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+                                    <div class="fg-line">
+                                        <input type="text" class="form-control" placeholder="Email Address">
+                                    </div>
+                                </div> -->
+
+                               <!--  <div class="col-sm-6 m-b-20">
                                     <div class="form-group fg-line">
                                         <label>value</label>
                                         <input type="number" class="form-control" placeholder="$" ng-model="value" ng-change="calcCapRate()">
                                     </div>
-                                </div>                
+                                </div>     -->            
                                 </form>
                             </div>
 

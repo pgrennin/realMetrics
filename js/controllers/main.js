@@ -692,10 +692,11 @@ materialAdmin
          yellowFrom: 6,
          yellowTo: 10,
          minorTicks: 5
+         // NumberFormat:{suffix: '%',pattern:'#'}
        };
 
        // Set default value
-       $scope.gaugeCapRate=['cap rate', 10];
+       $scope.gaugeCapRate=['cap rate %', 10];
 
        $scope.gaugeChartObject.data = [
          ['Label', 'Value'],
@@ -703,6 +704,7 @@ materialAdmin
          // ['CPU', 55]
          // ['Network', 68]
        ];
+
 
         // calculate cap rate at page load
         $scope.calcCapRate();

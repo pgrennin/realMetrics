@@ -16104,3 +16104,10 @@ select.chosen {
 .mCSB_inside > .mCSB_container {
   margin-right: 0;
 }
+
+.currencyinput {
+    border: 1px inset #ccc;
+}
+.currencyinput input {
+    border: 0;
+}
