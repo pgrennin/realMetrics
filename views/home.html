@@ -163,8 +163,9 @@
                 <div class="col-sm-6">
                     
                     <!--***Begin capitlization rate calc  -->
-                    <div class="card">
+                    <div ng-controller="capRateGraphController">
 
+                    <div class="card">
                         <div class="card-header ch-alt m-b-20">
                             <h2>Capitalization Rate <small>Phasellus condimentum ipsum id auctor imperdie</small></h2>
                             <ul class="actions">
@@ -198,7 +199,7 @@
                                 <div class="col-sm-6 m-b-20">
                                     <div class="form-group fg-line">
                                         <label>value</label>
-                                        <input type="number" class="form-control" placeholder="$" ng-model="value">
+                                        <input type="number" class="form-control" placeholder="$" ng-model="value" ng-change="calcCapRate()">
                                     </div>
                                 </div>                
                                 </form>
@@ -206,14 +207,46 @@
                             </div>
 
                             <div class="p-t-20 p-b-20 text-center">
-                                <div class="easy-pie sub-pie-1" data-percent="50" data-easypie-chart>
+                                <div id="capRatePie" class="easy-pie sub-pie-1" data-percent="50" data-easypie-chart>
                                     <div class="percent">{{(noi/value)*100 |number:2}}</div>
                                     <div class="pie-title">Cap Rate</div>
+                                    <p>noi calculated function:{{capRateCalculated}}</p>
                                 </div>
                             </div>
 
                         </div> <!-- row -->
                         
+                       
+
+                        <div class="row">
+
+                        
+                            <p>chart value from scope: {{dataSource.dials.dial[0].value}}</p>
+                            <form name="capRateForm1">
+                            <input name="value" type="number" class="form-control" placeholder="$" ng-model="dataSource.dials.dial[0].value">
+                            </form>
+
+                            <!-- <button ng-click="updateChart()">Update Chart</button> -->
+
+                            <!-- show chart if form touched -->
+                            <!-- <span ng-show="capRateForm1.value.$touched"> -->
+                           
+                            <!-- </span> -->
+
+                            <div id="chart-container">
+                                <fusioncharts 
+                                    width= "50%"
+                                    height= "200"
+                                    type= "angulargauge"
+                                    dataFormat= "json"
+                                    dataSource= "{{dataSource}}">
+                                </fusioncharts>
+                            </div>
+                        </div>
+                        </div> <!-- end row -->
+
+                        
+
                         <hr>
                         <div class="row">
                         <div  ng-controller="shoppingCtrl" class="col-sm-6 m-b-20">
@@ -226,22 +259,6 @@
                             <input ng-model="addMe">
                             <button ng-click="addItem()">Add</button>
                             <p>{{errortext}}</p>
-                        </div>
-                        </div> <!-- end row -->
-
-                        <div class="row">
-
-                        <div ng-controller="capRateGraphController">
-                            <input type="number" class="form-control" placeholder="$" ng-model="Chartvalue">
-                            <fusioncharts 
-                                width= "100%"
-                                height= "400"
-                                type= "angulargauge"
-                                dataFormat= "json"
-                                dataSource= "{{dataSource}}">
-                            </fusioncharts>
-
-                            <div id="chart-container">FusionCharts XT will load here!</div>
                         </div>
                         </div> <!-- end row -->
 

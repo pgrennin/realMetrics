@@ -606,16 +606,14 @@ materialAdmin
     .controller('capRateGraphController', function($scope) {
       // $scope.chartValue='210000';
 
-      $scope.chartValue='210000';
+      // $scope.$watch('myModel', function() { ... }, true);
 
-       $scope.$watch("chartValue", function(newValue, oldValue) {
-         if ($scope.chartValue.length > 0) {
-            // $scope.greeting = "Greetings " + $scope.name;
+       // $scope.$watch("chartValue", function(newValue, oldValue) {
+       //   if ($scope.chartValue.length > 0) {
+       //      // $scope.greeting = "Greetings " + $scope.name
 
-
-
-         }
-       });
+       //   }
+       // });
 
         $scope.dataSource = {
             "chart": {
@@ -626,8 +624,8 @@ materialAdmin
                 "autoaligntickvalues": "1",
                 "bgcolor": "AEC0CA,FFFFFF",
                 "fillangle": "45",
-                "upperlimit": "2500000",
-                "lowerlimit": "1600000",
+                "upperlimit": "100",
+                "lowerlimit": "0",
                 "majortmnumber": "10",
                 "majortmheight": "8",
                 "showgaugeborder": "0",
@@ -636,7 +634,7 @@ materialAdmin
                 "gaugeoriginy": "206",
                 "gaugeinnerradius": "2",
                 "formatnumberscale": "1",
-                "numberprefix": "$",
+                "numberprefix": "",
                 "decmials": "2",
                 "tickmarkdecimals": "1",
                 "pivotradius": "17",
@@ -650,27 +648,27 @@ materialAdmin
             "colorrange": {
                 "color": [
                     {
-                        "minvalue": "1600000",
-                        "maxvalue": "1930000",
-                        "code": "399E38"
+                        "minvalue": "0",
+                        "maxvalue": "10",
+                        "code": "B41527"
                     },
                     {
-                        "minvalue": "1930000",
-                        "maxvalue": "2170000",
+                        "minvalue": "20",
+                        "maxvalue": "30",
                         "code": "E48739"
                     },
                     {
-                        "minvalue": "2170000",
-                        "maxvalue": "2500000",
-                        "code": "B41527"
+                        "minvalue": "30",
+                        "maxvalue": "40",
+                        "code": "399E38"
                     }
                 ]
             },
             "dials": {
                 "dial": [
                     {
-                        // **valule
-                        "value": $scope.chartValue,
+                        // **value
+                        "value": '0',
                         "borderalpha": "0",
                         "bgcolor": "000000",
                         "basewidth": "28",
@@ -720,7 +718,51 @@ materialAdmin
                     }
                 ]
             }
-        }       
+        }
+
+
+        $scope.updateChart = function () {
+            // $scope.errortext = "";
+            $scope.dataSource.dials.dial.value='2000000';
+        }
+
+        // $scope.pieChartPercent = ($scope.noi/$scope.value)*100;
+        // alert($scope.pieChartPercent);
+
+        // updaate the data-percen property of pie chart
+        // var el =angular.element('#capRatePie');
+        // el.attr('data-percent', ($scope.noi/$scope.value)*100);
+        // $compile('#capRatePie')(scope);
+
+        // $("#capRatePie").html(
+        //   $compile(
+        //     "<div id='capRatePie' class='easy-pie sub-pie-1' data-percent='{{(noi/value)*100 |number:2}}'  data-easypie-chart>"
+        //   )(scope)
+        // );
+
+        // create function to caclulate cap rate
+
+        $scope.calcCapRate = function () {
+            $scope.capRateCalculated = ($scope.noi/$scope.value)*100;
+            // assign calculated value to data in chart
+            $scope.dataSource.dials.dial[0].value =  $scope.capRateCalculated;
+        }
+
+
+        // $scope.addItem = function () {
+        //     $scope.errortext = "";
+        //     if (!$scope.addMe) {return;}
+        //     if ($scope.products.indexOf($scope.addMe) == -1) {
+        //         $scope.products.push($scope.addMe);
+        //     } else {
+        //         $scope.errortext = "The item is already in your shopping list.";
+        //     }
+        // }
+        // $scope.removeItem = function (x) {
+        //     $scope.errortext = "";
+        //     $scope.products.splice(x, 1);
+        // } 
+
 
     
 
