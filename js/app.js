@@ -8,7 +8,8 @@ var materialAdmin = angular.module('materialAdmin', [
     'nouislider',
     'ngTable',
     // 'ng-fusioncharts',
-    'googlechart'
+    'googlechart',
+    'ui.utils.masks'
 ])
 
 

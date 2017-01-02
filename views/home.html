@@ -155,23 +155,19 @@
 
                                 <div class="col-sm-6 m-b-20">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="zmdi zmdi-money"></i></span>
                                     <label>net operating income</label>
                                     <div class="fg-line">
-                                        <input type="number" class="form-control" placeholder="" ng-model="noi" ng-change="calcCapRate()">
+                                        <input type="text" class="form-control" placeholder="" ng-model="noi" ng-change="calcCapRate()" ng-model="money" ui-money-mask="0">
                                     </div>
-                                    <span class="input-group-addon last"><i class="zmdi"></i></span>
                                 </div>
                                 </div>
 
                                 <div class="col-sm-6 m-b-20">
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="zmdi zmdi-money"></i></span>
                                     <div class="fg-line">
                                         <label>value</label>
-                                        <input type="number" class="form-control" placeholder="" ng-model="value" ng-change="calcCapRate()">
+                                        <input type="text" class="form-control" placeholder="" ng-model="value" ng-change="calcCapRate()" ng-model="money" ui-money-mask="0">
                                     </div>
-                                    <span class="input-group-addon last"><i class="zmdi"></i></span>
                                 </div>
                                 </div>
 
@@ -208,11 +204,11 @@
                             </div> <!-- end row -->
 
                             <div class="row">
-                            <div  class="col-sm-3 m-b-20"></div>
-                            <div  class="col-sm-4 m-b-20">
-                                <a class="btn btn-primary" href="#/net-cap-rate">About this Metric</a>
+                            <div  class="col-sm-12 m-b-20 text-center">
+                                <a class="btn btn-primary" href="#/net-cap-rate">about this metric</a>
+                                <a class="btn btn-primary" href="" ng-click="reset()">reset</a>
                             </div>
-                            <div  class="col-sm-3 m-b-20"></div>
+                            
                             </div> <!-- end row -->
 
 
