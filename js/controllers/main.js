@@ -66,6 +66,9 @@ materialAdmin
         this.skinSwitch = function (color) {
             this.currentSkin = color;
         }
+
+
+
     
     })
 
@@ -627,7 +630,87 @@ materialAdmin
 
             // Assign calculated value to gaugeCapRate
             $scope.gaugeCapRate[1]=$scope.capRateCalculated;
+            // $scope.createPieChart();
+            // console.log($scope.capRateCalculated);
+            
+            // update the pie chart after each time this function is called
+            // $('.min-chart#chart-sales').data('easyPieChart').update($scope.capRateCalculated);
+            // $('#percent-graph-custom').data('easyPieChart').update($scope.capRateCalculated);
+             // $('.main-pie').data('easyPieChart').update($scope.capRateCalculated);
+             // $('.main-pie').data('easyPieChart').update(90);
+             // $('#percent-graph-custom').data('easyPieChart').update($scope.capRateCalculated);
+             
+             $('#percent-graph-custom-min').data('easyPieChart').update($scope.capRateCalculated);
+
         }
+
+
+        //create minimalist pie chart
+        // $scope.createPieChart = function () {
+        //     $('.min-chart#chart-sales').easyPieChart({
+        //                    barColor: "#4caf50",
+        //                    // onStep: function (from, to, percent) {
+        //                    //     $scope.capRateCalculated.text(Math.round(percent));
+        //                    // },
+        //                    responsive: true  
+        // });
+        // }
+        // $scope.createPieChart();
+
+
+        function easyPieChart(selector, trackColor, scaleColor, barColor, lineWidth, lineCap, size) {
+            $(selector).easyPieChart({
+                trackColor: trackColor,
+                scaleColor: scaleColor,
+                barColor: barColor,
+                lineWidth: lineWidth,
+                lineCap: lineCap,
+                size: size
+            // }).data('easyPieChart').update(scope.capRateCalculated);
+            });
+        }
+
+        // easyPieChart('#percent-graph-custom', 'rgba(255,255,255,0.2)', 'rgba(255,255,255,0.5)', 'rgba(255,255,255,0.7)', 7, 'butt', 148);
+        easyPieChart('#percent-graph-custom-min', '#eee', '#ccc', '#2196F3', 4, 'butt', 95);
+        // easyPieChart('.sub-pie-2', '#eee', '#ccc', '#FFC107', 4, 'butt', 95);
+
+
+            //create instance
+           // $('.chart').easyPieChart({
+           //     animate: 2000,
+           //     trackColor: 'rgba(255,255,255,0.2)',
+           //     scaleColor: 'rgba(255,255,255,0.5)',
+           //     barColor: 'rgba(255,255,255,0.7)',
+           //     lineWidth: 7,
+           //     lineCap: 'butt',
+           //     size: 148
+           // });
+           // //update instance after 5 sec
+           // setTimeout(function() {
+           //     $('.chart').data('easyPieChart').update(40);
+           // }, 5000);
+
+
+           // function easyPieChart(selector, trackColor, scaleColor, barColor, lineWidth, lineCap, size) {
+           //     $(selector).easyPieChart({
+           //         trackColor: trackColor,
+           //         scaleColor: scaleColor,
+           //         barColor: barColor,
+           //         lineWidth: lineWidth,
+           //         lineCap: lineCap,
+           //         size: size
+           //     // }).data('easyPieChart').update(scope.capRateCalculated);
+           //     });
+           // }
+
+           // easyPieChart('.main-pie', 'rgba(255,255,255,0.2)', 'rgba(255,255,255,0.5)', 'rgba(255,255,255,0.7)', 7, 'butt', 148);
+
+
+
+
+
+
+        // setTimeout(function(){ alert("ran cap rate calculated"); }, 0);
 
         // // google chart pie chart example
         // $scope.myChartObject = {};
@@ -710,5 +793,6 @@ materialAdmin
         $scope.calcCapRate();
 
     }) //end controller
+
 
     

@@ -141,19 +141,46 @@
                         </div>
     
                         <div class="card-body card-padding">
+                            
+                            <!-- begin percent chart -->
+                            <row class='text-center'>
+                            <div class="col-sm-4 m-b-20"></div>
+                            <div class="col-sm-4 m-b-20">
+                                <div class="easy-pie sub-pie-1 text-center" id='percent-graph-custom-min' data-percent="0">
+                                    <div class="percent">{{capRateCalculated |number:1}}</div>
+                                    <div class="pie-title">Cap Rate</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 m-b-20"></div>
+                            </row>
+                            <!-- <hr> -->
 
-                            <div class="row">
+                            <!-- dashborad widget of cap rate -->
+                            <!-- <row> -->
+                            <!-- <div class="bgm-bluegray">
+                                <div class="clearfix"></div>
+                                <div class="text-center p-20 m-t-25">
+                                    <div class="easy-pie main-pie" id="percent-graph-custom"  data-percent="{{capRateCalculated}}">
+                                    <div class="percent">{{capRateCalculated |number:1}}</div>
+                                    <div class="pie-title">cap rate</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- </row> -->
+
+                            <!-- <div class="row">
                             <div class="col-sm-6 m-b-20">
                                 <div class="form-group fg-line f-16">
                                     <label><strong>cap rate: {{capRateCalculated |number:1}}%</strong></label>
                                 </div>
                             </div>
-                            </div> <!-- end row -->
+                            </div> --> <!-- end row -->
 
-                            <div class="row">
+                            <hr>
+                            <div class="row p-t-30">
+                                
                                 <form>
-
-                                <div class="col-sm-6 m-b-20">
+                                <div class="col-sm-6 m-b-30">
                                 <div class="input-group">
                                     <label>net operating income</label>
                                     <div class="fg-line">
@@ -161,7 +188,7 @@
                                     </div>
                                 </div>
                                 </div>
-
+                                
                                 <div class="col-sm-6 m-b-20">
                                 <div class="input-group">
                                     <div class="fg-line">
@@ -194,14 +221,15 @@
                                 </div>     -->            
                                 </form>
                             </div>
-
-                            <div class="row">
+                            
+                            <!-- Google guage chart example -->
+                            <!-- <div class="row">
                             <div  class="col-sm-3 m-b-20"></div>
                             <div  class="col-sm-4 m-b-20">
                                 <div google-chart chart="gaugeChartObject" style="height:200px; width:100%;"></div>
                             </div>
                             <div  class="col-sm-3 m-b-20"></div>
-                            </div> <!-- end row -->
+                            </div> --> <!-- end row -->
 
                             <div class="row">
                             <div  class="col-sm-12 m-b-20 text-center">
@@ -210,13 +238,14 @@
                             </div>
                             
                             </div> <!-- end row -->
-
-
+                            
                         </div> <!-- row -->
                         </div>
                         
                         <!-- TEST CARD -->
                         <div class="card">
+                        
+                        
                         <hr>
                         <div class="row">
                         <div  ng-controller="shoppingCtrl" class="col-sm-6 m-b-20">
@@ -232,7 +261,18 @@
                         </div>
                         </div> <!-- end row -->
 
+                        
+
+                        <!-- <div class="text-xs-center" ng-controller="chartTest">
+                            <span class="min-chart" id="chart-sales" data-percent="56"><span class="percent"></span></span>
+                            <h5><span class="label green">Sales <i class="fa fa-arrow-circle-up"></i></span></h5>
+                        </div> -->
+
+                        </row>
+
+
                         </div> <!-- end row -->
+
                         </div> <!-- end card -->
 
 
@@ -240,7 +280,39 @@
 
 
                     </div>
-                    <!--***End capitlization rate calc  -->               
+                    <!--***End capitlization rate calc  -->
+                    <div class="card">                        
+                        <div class="col-md-3 col-sm-6">
+                            <div id="pie-charts" class="dash-widget-item">
+                                <div class="bgm-pink">
+                                    <div class="dash-widget-header">
+                                        <div class="dash-widget-title">capitalization rate</div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="text-center p-20 m-t-25">
+                                        <div class="easy-pie main-pie" data-percent="75" data-easypie-chart>
+                                            <div class="percent">45</div>
+                                            <div class="pie-title">Total Emails Sent</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-t-20 p-b-20 text-center">
+                                    <div class="easy-pie sub-pie-1" data-percent="56" data-easypie-chart>
+                                        <div class="percent">56</div>
+                                        <div class="pie-title">Bounce Rate</div>
+                                    </div>
+                                    <div class="easy-pie sub-pie-2" data-percent="84" data-easypie-chart>
+                                        <div class="percent">84</div>
+                                        <div class="pie-title">Total Opened</div>
+                                    </div>
+                                </div>
+                            </div> <!-- pie chart -->
+                        </div> <!-- column -->
+
+                    </div>               
                     
                 </div>
             </div>

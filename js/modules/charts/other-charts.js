@@ -67,6 +67,9 @@ materialAdmin
         return {
             restrict: 'A',
             link: function(scope, element, attrs) {
+
+                $scope.$watch('capRateCalculated', function() { //test
+
                 function sparklinePie(select, values, width, height, sliceColors) {
                     $(select).sparkline(values, {
                         type: 'pie',
@@ -81,6 +84,8 @@ materialAdmin
                 if ($('.stats-pie')[0]) {
                     sparklinePie('.stats-pie', [20, 35, 30, 5], 45, 45, ['#fff', 'rgba(255,255,255,0.7)', 'rgba(255,255,255,0.4)', 'rgba(255,255,255,0.2)']);
                 }
+                
+                }) //test
             }
         }
     })
@@ -95,6 +100,8 @@ materialAdmin
         return {
             restrict: 'A',
             link: function(scope, element) {
+                
+                
                 function easyPieChart(selector, trackColor, scaleColor, barColor, lineWidth, lineCap, size) {
                     $(selector).easyPieChart({
                         trackColor: trackColor,
@@ -103,12 +110,23 @@ materialAdmin
                         lineWidth: lineWidth,
                         lineCap: lineCap,
                         size: size
+                    // }).data('easyPieChart').update(scope.capRateCalculated);
                     });
+
+                    // update test
+                    // $('.main-pie').data('easyPieChart').update(50);
                 }
 
                 easyPieChart('.main-pie', 'rgba(255,255,255,0.2)', 'rgba(255,255,255,0.5)', 'rgba(255,255,255,0.7)', 7, 'butt', 148);
                 easyPieChart('.sub-pie-1', '#eee', '#ccc', '#2196F3', 4, 'butt', 95);
                 easyPieChart('.sub-pie-2', '#eee', '#ccc', '#FFC107', 4, 'butt', 95);
+
+                // $(selector).easyPieChart.update('70');
+
+                // test
+                // setTimeout(function() {
+                //         $('.chart').data('easyPieChart').update(40);
+                // }, 5000);
             }
         }
     })
