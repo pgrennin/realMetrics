@@ -795,4 +795,77 @@ materialAdmin
     }) //end controller
 
 
+    // =========================================================================
+    // NOI Controller
+    // =========================================================================
+
+    .controller('noiController', function($scope) {
+        // default values
+        $scope.grossScheduledRentIncome=12000;
+        $scope.otherIncome=100;
+        $scope.capRateCalculatedMaster=10;
+
+        // Reset the default values of the form
+        $scope.reset = function() {
+                $scope.value = angular.copy($scope.valueMaster);
+                $scope.noi = angular.copy($scope.noiMaster);
+                $scope.capRateCalculated= angular.copy($scope.capRateCalculatedMaster);
+            };
+        $scope.reset();
+
+        // Calculate the cap rate
+        $scope.calcCapRate = function () {
+            $scope.capRateCalculated = ($scope.noi/$scope.value)*100;
+            // Assign calculated value to gaugeCapRate
+            $scope.gaugeCapRate[1]=$scope.capRateCalculated;
+             
+             $('#percent-graph-custom-min').data('easyPieChart').update($scope.capRateCalculated);
+
+        }
+
+        function easyPieChart(selector, trackColor, scaleColor, barColor, lineWidth, lineCap, size) {
+            $(selector).easyPieChart({
+                trackColor: trackColor,
+                scaleColor: scaleColor,
+                barColor: barColor,
+                lineWidth: lineWidth,
+                lineCap: lineCap,
+                size: size
+            });
+        }
+
+        easyPieChart('#percent-graph-custom-min', '#eee', '#ccc', '#2196F3', 4, 'butt', 95);
+
+        // gauge google
+        $scope.gaugeChartObject = {};
+        $scope.gaugeChartObject.type = "Gauge";
+
+       $scope.gaugeChartObject.options = {
+         width: 400,
+         height: 180,
+         redFrom: 0,
+         redTo: 5,
+         yellowFrom: 6,
+         yellowTo: 10,
+         minorTicks: 5
+         // NumberFormat:{suffix: '%',pattern:'#'}
+       };
+
+       // Set default value
+       $scope.gaugeCapRate=['cap rate %', 10];
+
+       $scope.gaugeChartObject.data = [
+         ['Label', 'Value'],
+         $scope.gaugeCapRate
+         // ['CPU', 55]
+         // ['Network', 68]
+       ];
+
+
+        // calculate cap rate at page load
+        $scope.calcCapRate();
+
+    }) //end controller
+
+
     

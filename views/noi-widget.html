@@ -1,0 +1,88 @@
+<div ng-controller="noiController">
+    <div class="card">
+        <div class="card-header ch-alt m-b-5">
+            <h2>Net Operating Income <small>Net operating income (NOI) is a calculation used to analyze real estate investments that generate income. Net operating income equals all revenue from the property minus all reasonably necessary operating expenses.
+                            </small></h2>
+            <ul class="actions">
+                <li class="dropdown" uib-dropdown>
+                    <a href="" uib-dropdown-toggle>
+                        <i class="zmdi zmdi-more-vert"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li>
+                            <a href="" ng-click="reset()">reset</a>
+                        </li>
+                        <li>
+                            <a href="">information about this metric</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body card-padding">
+            <!-- begin percent chart -->
+            <!-- <row class='text-center'>
+                <div class="col-sm-4 m-b-20"></div>
+                <div class="col-sm-4 m-b-20">
+                    <div class="easy-pie sub-pie-1 text-center" id='percent-graph-custom-min' data-percent="0">
+                        <div class="percent">{{capRateCalculated |number:1}}</div>
+                        <div class="pie-title">Cap Rate</div>
+                    </div>
+                </div>
+                <div class="col-sm-4 m-b-20"></div>
+            </row> -->
+            <!-- <hr> -->
+            <div class="row p-t-0">
+                <form>
+                    <div class="col-sm-12 m-b-30">
+                        
+                        <h4>Income</h4>
+                        <!-- <hr> -->
+                        <!-- <div class="clearfix"></div> -->
+
+                        <div class="input-group m-b-15">
+                            <label>gross scheduled rent income</label>
+                            <div class="fg-line">
+                                <input type="text" class="form-control" placeholder="" ng-model="grossScheduledRentIncome" ng-change="calculateNOI()" ng-model="money" ui-money-mask="0">
+                            </div>
+                        </div>
+
+                        <div class="input-group m-b-15">
+                            <label>other income</label>
+                            <div class="fg-line">
+                                <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calculateNOI()" ng-model="money" ui-money-mask="0">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- <div class="col-sm-6 m-b-20">
+                        <div class="input-group">
+                            <div class="fg-line">
+                                <label>value</label>
+                                <input type="text" class="form-control" placeholder="" ng-model="value" ng-change="calcCapRate()" ng-model="money" ui-money-mask="0">
+                            </div>
+                        </div>
+                    </div> -->
+                </form>
+            </div>
+            <!-- Google guage chart example -->
+            <!-- <div class="row">
+                            <div  class="col-sm-3 m-b-20"></div>
+                            <div  class="col-sm-4 m-b-20">
+                                <div google-chart chart="gaugeChartObject" style="height:200px; width:100%;"></div>
+                            </div>
+                            <div  class="col-sm-3 m-b-20"></div>
+                            </div> -->
+            <!-- end row -->
+            <div class="row">
+                <div class="col-sm-12 m-b-20 text-center">
+                    <a class="btn btn-primary" href="#/net-cap-rate">about this metric</a>
+                    <a class="btn btn-primary" href="" ng-click="reset()">reset</a>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- row -->
+    </div>
+</div>
+<!-- end card -->

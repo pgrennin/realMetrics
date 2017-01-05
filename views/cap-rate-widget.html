@@ -1,0 +1,77 @@
+<div ng-controller="capRateGraphController">
+    <div class="card">
+        <div class="card-header ch-alt m-b-20">
+            <h2>capitalization rate <small>The capitalization rate is the rate of return on a real estate investment property based on the income that the property is expected to generate. The capitalization rate is used to estimate the investor's potential return on his or her investment.
+                            </small></h2>
+            <ul class="actions">
+                <li class="dropdown" uib-dropdown>
+                    <a href="" uib-dropdown-toggle>
+                        <i class="zmdi zmdi-more-vert"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li>
+                            <a href="" ng-click="reset()">reset</a>
+                        </li>
+                        <li>
+                            <a href="">information about this metric</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body card-padding">
+            <!-- begin percent chart -->
+            <row class='text-center'>
+                <div class="col-sm-4 m-b-20"></div>
+                <div class="col-sm-4 m-b-20">
+                    <div class="easy-pie sub-pie-1 text-center" id='percent-graph-custom-min' data-percent="0">
+                        <div class="percent">{{capRateCalculated |number:1}}</div>
+                        <div class="pie-title">Cap Rate</div>
+                    </div>
+                </div>
+                <div class="col-sm-4 m-b-20"></div>
+            </row>
+           
+            <hr>
+            <div class="row p-t-30">
+                <form>
+                    <div class="col-sm-6 m-b-30">
+                        <div class="input-group">
+                            <label>net operating income</label>
+                            <div class="fg-line">
+                                <input type="text" class="form-control" placeholder="" ng-model="noi" ng-change="calcCapRate()" ng-model="money" ui-money-mask="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 m-b-20">
+                        <div class="input-group">
+                            <div class="fg-line">
+                                <label>value</label>
+                                <input type="text" class="form-control" placeholder="" ng-model="value" ng-change="calcCapRate()" ng-model="money" ui-money-mask="0">
+                            </div>
+                        </div>
+                    </div>
+                   
+                </form>
+            </div>
+            <!-- Google guage chart example -->
+            <!-- <div class="row">
+                            <div  class="col-sm-3 m-b-20"></div>
+                            <div  class="col-sm-4 m-b-20">
+                                <div google-chart chart="gaugeChartObject" style="height:200px; width:100%;"></div>
+                            </div>
+                            <div  class="col-sm-3 m-b-20"></div>
+                            </div> -->
+            <!-- end row -->
+            <div class="row">
+                <div class="col-sm-12 m-b-20 text-center">
+                    <a class="btn btn-primary" href="#/net-cap-rate">about this metric</a>
+                    <a class="btn btn-primary" href="" ng-click="reset()">reset</a>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- row -->
+    </div>
+   
+</div><!-- end card -->
