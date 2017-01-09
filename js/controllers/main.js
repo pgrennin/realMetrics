@@ -804,12 +804,13 @@ materialAdmin
         $scope.grossScheduledRentIncome=12000;
         $scope.otherIncome=100;
         $scope.capRateCalculatedMaster=10;
+        $scope.totalGrossIncome=$scope.grossScheduledRentIncome+$scope.otherIncome;
 
         // Reset the default values of the form
         $scope.reset = function() {
-                $scope.value = angular.copy($scope.valueMaster);
-                $scope.noi = angular.copy($scope.noiMaster);
-                $scope.capRateCalculated= angular.copy($scope.capRateCalculatedMaster);
+                // $scope.value = angular.copy($scope.valueMaster);
+                // $scope.noi = angular.copy($scope.noiMaster);
+                // $scope.capRateCalculated= angular.copy($scope.capRateCalculatedMaster);
             };
         $scope.reset();
 

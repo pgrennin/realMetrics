@@ -40,31 +40,84 @@
                         <!-- <hr> -->
                         <!-- <div class="clearfix"></div> -->
 
-                        <div class="input-group m-b-15">
-                            <label>gross scheduled rent income</label>
-                            <div class="fg-line">
-                                <input type="text" class="form-control" placeholder="" ng-model="grossScheduledRentIncome" ng-change="calculateNOI()" ng-model="money" ui-money-mask="0">
+                        
+                        <!-- gross schedulued income -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>gross scheduled rent income</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="grossScheduledRentIncome" ng-change="calculateNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="grossScheduledRentIncome" ng-change="calculateNOI()" ui-percentage-mask="0"> -->
+                                    100%
+                                </div>
+                            </div>
                             </div>
                         </div>
 
-                        <div class="input-group m-b-15">
-                            <label>other income</label>
-                            <div class="fg-line">
-                                <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calculateNOI()" ng-model="money" ui-money-mask="0">
+                        <!-- other income -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>other income</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calculateNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calculateNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
                             </div>
                         </div>
 
-                    </div>
-                    <!-- <div class="col-sm-6 m-b-20">
-                        <div class="input-group">
-                            <div class="fg-line">
-                                <label>value</label>
-                                <input type="text" class="form-control" placeholder="" ng-model="value" ng-change="calcCapRate()" ng-model="money" ui-money-mask="0">
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>total gross income</label>
+                                <div class="fg-line">
+                                    10,000<!-- {{totalGrossIncome | currency}}                                 -->
+                                </div>
                             </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br>
+                                <div class="fg-line">
+                                    10%                                
+                                </div>
+                            </div>
+                            </div>
+
                         </div>
-                    </div> -->
+
+                        <hr>
+                        <h4>Vacancy & Credit Allowance</h4>
+
+                        
+                    </div> <!-- end column -->
+                    
                 </form>
+                
             </div>
+
+
             <!-- Google guage chart example -->
             <!-- <div class="row">
                             <div  class="col-sm-3 m-b-20"></div>
