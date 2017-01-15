@@ -22,19 +22,19 @@
         <div class="card-body card-padding">
             <!-- begin percent chart -->
             <!-- <row class='text-center'>
-                <div class="col-sm-4 m-b-20"></div>
-                <div class="col-sm-4 m-b-20">
+                <div class="col-sm-6 m-b-20"></div>
+                <div class="col-sm-6 m-b-20">
                     <div class="easy-pie sub-pie-1 text-center" id='percent-graph-custom-min' data-percent="0">
                         <div class="percent">{{capRateCalculated |number:1}}</div>
                         <div class="pie-title">Cap Rate</div>
                     </div>
                 </div>
-                <div class="col-sm-4 m-b-20"></div>
+                <div class="col-sm-6 m-b-20"></div>
             </row> -->
             <!-- <hr> -->
             <div class="row p-t-0">
                 <form>
-                    <div class="col-sm-12 m-b-30">
+                    <div class="col-sm-8 m-b-30">
                         
                         <h4>Income</h4>
                         <!-- <hr> -->
@@ -47,7 +47,7 @@
                             <div class="input-group m-b-15">
                                 <label>gross scheduled rent income</label>
                                 <div class="fg-line">
-                                    <input type="text" class="form-control" placeholder="" ng-model="grossScheduledRentIncome" ng-change="calculateNOI()" ui-money-mask="0">
+                                    <input type="text" class="form-control" placeholder="" ng-model="grossScheduledRentIncome" ng-change="calcNOI()" ui-money-mask="0">
                                 </div>
                             </div>
                             </div>
@@ -56,7 +56,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="grossScheduledRentIncome" ng-change="calculateNOI()" ui-percentage-mask="0"> -->
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="grossScheduledRentIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
                                     100%
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                             <div class="input-group m-b-15">
                                 <label>other income</label>
                                 <div class="fg-line">
-                                    <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calculateNOI()" ui-money-mask="0">
+                                    <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-money-mask="0">
                                 </div>
                             </div>
                             </div>
@@ -78,7 +78,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calculateNOI()" ui-percentage-mask="0"> -->
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
                                     25%
                                 </div>
                             </div>
@@ -86,12 +86,33 @@
                         </div>
 
                         
+                        <h4>Total Gross Income</h4>
                         <div class="row">
                             <div class="col-sm-6">
                             <div class="input-group m-b-15">
-                                <label>total gross income</label>
+                                <div class="form-control">
+                                    {{totalGrossIncome | currency}}
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <div class="">
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- <hr> -->
+                        <h4>Vacancy & Credit Allowance</h4>
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <!-- <label>Vacany & Credit Allowance</label> -->
                                 <div class="fg-line">
-                                    10,000<!-- {{totalGrossIncome | currency}}                                 -->
+                                    <input type="text" class="form-control" placeholder="" ng-model="vacancyAndCreditAllowance" ng-change="calcNOI()" ui-money-mask="0">
                                 </div>
                             </div>
                             </div>
@@ -100,32 +121,582 @@
                             <div class="input-group m-b-15">
                                 <br>
                                 <div class="fg-line">
-                                    10%                                
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <h4>Gross Operating Income</h4>
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <div class="form-control">
+                                    {{grossOperatingIncome | currency}}
                                 </div>
                             </div>
                             </div>
 
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <div class="">
+                                    25%
+                                </div>
+                            </div>
+                            </div>
                         </div>
 
-                        <hr>
-                        <h4>Vacancy & Credit Allowance</h4>
+                        <!-- <hr> -->
+                        <h4>Expenses</h4>
+                         <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Accounting</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="accounting" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
 
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                         <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Advertising</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="advertising" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                         <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Insurance</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="insurance" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                         <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Janitorial Service</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="janitorialService" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: lawnsnow -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Lawn and Snow</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="lawnsnow" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: legal -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Legal</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="legal" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: licenses -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Licenses</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="licenses" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: miscellaneous -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Miscellaneous</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="miscellaneous" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- propertyManagement -->
+                        <div expense: class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Property Management</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="propertyManagement" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- repairsAndMaintenance -->
+                        <div expense: class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Repairs And Maintenance</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="repairsAndMaintenance" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- residentSuperintendent -->
+                        <div expense: class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Resident Superintendent</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="residentSuperintendent" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: supplies -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Supplies</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="supplies" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <h5>Taxes</h5>
+                        
+
+                        <!-- expense: realEstate -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15 p-l-20">
+                                <label>Real Estate Taxes</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="realEstate" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: personalProperty -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15 p-l-20">
+                                <label>Personal Property Tax</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="personalProperty" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: payroll -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15 p-l-20">
+                                <label>Payroll Tax</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="payroll" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: other -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15 p-l-20">
+                                <label>Other Tax</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="otherTax" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: trashRemoval -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <label>Trash Removal</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="trashRemoval" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <h5>Utilities</h5>
+                        
+
+                        <!-- expense: electricity -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15 p-l-20">
+                                <label>Electricity</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="electricity" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: fuelOil -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15 p-l-20">
+                                <label>Fuel/Oil</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="fuelOil" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: gas -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15 p-l-20">
+                                <label>Gas</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="gas" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: sewerAndWater -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15 p-l-20">
+                                <label>Sewer and Water</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="sewerAndWater" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: telephone -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15 p-l-20">
+                                <label>Telephone</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="telephone" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- expense: other -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15 p-l-20">
+                                <label>other</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="" ng-model="otherUtilities" ng-change="calcNOI()" ui-money-mask="0">
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <br><br>
+                                <div class="fg-line">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <h4>Total Expenses</h4>
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <!-- <label>Vacany & Credit Allowance</label> -->
+                                <div class="    form-control">
+                                    {{totalExpenses | currency}}
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="totalExpenses" ng-change="calcNOI()" ui-money-mask="0"> -->
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="input-group m-b-15">
+                                <!-- <br> -->
+                                <div class="">
+                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
+                                    25%
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                         
                     </div> <!-- end column -->
                     
                 </form>
                 
+                <!-- charts column -->
+                <div class="col-sm-4 m-b-30">
+                    <!-- charts here! -->                 
+                </div>
+
             </div>
 
+            <div class="row">
+                <div id="incomedonutchart" style="width: 100%; height: 500px;"></div>
+            </div>
 
-            <!-- Google guage chart example -->
-            <!-- <div class="row">
-                            <div  class="col-sm-3 m-b-20"></div>
-                            <div  class="col-sm-4 m-b-20">
-                                <div google-chart chart="gaugeChartObject" style="height:200px; width:100%;"></div>
-                            </div>
-                            <div  class="col-sm-3 m-b-20"></div>
-                            </div> -->
             <!-- end row -->
             <div class="row">
                 <div class="col-sm-12 m-b-20 text-center">

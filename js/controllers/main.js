@@ -801,70 +801,133 @@ materialAdmin
 
     .controller('noiController', function($scope) {
         // default values
-        $scope.grossScheduledRentIncome=12000;
-        $scope.otherIncome=100;
-        $scope.capRateCalculatedMaster=10;
-        $scope.totalGrossIncome=$scope.grossScheduledRentIncome+$scope.otherIncome;
+        
+
 
         // Reset the default values of the form
         $scope.reset = function() {
                 // $scope.value = angular.copy($scope.valueMaster);
                 // $scope.noi = angular.copy($scope.noiMaster);
                 // $scope.capRateCalculated= angular.copy($scope.capRateCalculatedMaster);
+
+                // $scope.grossScheduledRentIncome=angular.copy($scope.grossScheduledRentIncome);
+                // $scope.otherIncomeangular.copy($scope.otherIncomeangular);
+                // $scope.capRateCalculatedMasterangular.copy($scope.capRateCalculatedMasterangular);
+                // $scope.totalGrossIncomeangular.copy($scope.totalGrossIncomeangular);
+                // $scope.noiangular.copy($scope.noiangular);
+                // $scope.capRateCalculatedMaster=10;
+
+                $scope.grossScheduledRentIncome=12000;
+                $scope.otherIncome=100;
+                $scope.totalGrossIncome=$scope.grossScheduledRentIncome+$scope.otherIncome;
+                $scope.noi=150;
+                $scope.vacancyAndCreditAllowance=600;
+                
+                //expenses
+                $scope.accounting=50;
+                $scope.advertising=65;
+                $scope.insurance=200;
+                $scope.janitorialService=150;
+                $scope.lawnsnow=7;
+                $scope.legal=7;
+                $scope.licenses=7;
+                $scope.miscellaneous=7;
+                $scope.propertyManagement=7;
+                $scope.repairsAndMaintenance=7;
+                $scope.residentSuperintendent=7;
+                $scope.supplies=7;
+                // $scope.taxes=7;
+                $scope.realEstate=7;
+                $scope.personalProperty=7;
+                $scope.payroll=7;
+                $scope.otherTax=7;
+                $scope.trashRemoval=7;
+                // $scope.utilities=7;
+                $scope.electricity=7;
+                $scope.fuelOil=7;
+                $scope.gas=7;
+                $scope.sewerAndWater=7;
+                $scope.telephone=7;
+                $scope.otherUtilities=7;
             };
-        $scope.reset();
 
-        // Calculate the cap rate
-        $scope.calcCapRate = function () {
-            $scope.capRateCalculated = ($scope.noi/$scope.value)*100;
+
+        // Calculate the noi
+        $scope.calcNOI = function () {
+            // $scope.calculatedNOI = 150;//($scope.noi/$scope.value)*100;
+            $scope.totalGrossIncome=$scope.grossScheduledRentIncome+$scope.otherIncome;
+            $scope.grossOperatingIncome=$scope.totalGrossIncome-$scope.vacancyAndCreditAllowance;
+
+            $scope.totalExpenses=$scope.accounting
+                                +$scope.advertising
+                                +$scope.insurance
+                                +$scope.janitorialService
+                                +$scope.lawnsnow
+                                +$scope.legal
+                                +$scope.licenses
+                                +$scope.miscellaneous
+                                +$scope.propertyManagement
+                                +$scope.repairsAndMaintenance
+                                +$scope.residentSuperintendent
+                                +$scope.supplies
+                                // +$scope.taxes
+                                +$scope.realEstate
+                                +$scope.personalProperty
+                                +$scope.payroll
+                                +$scope.otherTax
+                                +$scope.trashRemoval
+                                // +$scope.utilities
+                                +$scope.electricity
+                                +$scope.fuelOil
+                                +$scope.gas
+                                +$scope.sewerAndWater
+                                +$scope.telephone
+                                +$scope.otherUtilities
+                                ;
+
+            //Redraw chart
             // Assign calculated value to gaugeCapRate
-            $scope.gaugeCapRate[1]=$scope.capRateCalculated;
+            // $scope.gaugeCapRate[1]=$scope.capRateCalculated;
              
-             $('#percent-graph-custom-min').data('easyPieChart').update($scope.capRateCalculated);
+             // $('#percent-graph-custom-min').data('easyPieChart').update($scope.capRateCalculated);
 
         }
 
-        function easyPieChart(selector, trackColor, scaleColor, barColor, lineWidth, lineCap, size) {
-            $(selector).easyPieChart({
-                trackColor: trackColor,
-                scaleColor: scaleColor,
-                barColor: barColor,
-                lineWidth: lineWidth,
-                lineCap: lineCap,
-                size: size
-            });
-        }
 
-        easyPieChart('#percent-graph-custom-min', '#eee', '#ccc', '#2196F3', 4, 'butt', 95);
+        // INCOME CHART OBJECT
 
-        // gauge google
-        $scope.gaugeChartObject = {};
-        $scope.gaugeChartObject.type = "Gauge";
+        // Google Chart
+        google.charts.load("current", {packages:["corechart"]});
+              google.charts.setOnLoadCallback(drawChart);
+              function drawChart() {
+                $scope.data = google.visualization.arrayToDataTable([
+                  ['Income', 'Amount'],
+                  ['total gross income',     11],
+                  ['vacancy allowance',      2]
+                  // ['Commute',  2],
+                  // ['Watch TV', 2],
+                  // ['Sleep',    7]
+                ]);
 
-       $scope.gaugeChartObject.options = {
-         width: 400,
-         height: 180,
-         redFrom: 0,
-         redTo: 5,
-         yellowFrom: 6,
-         yellowTo: 10,
-         minorTicks: 5
-         // NumberFormat:{suffix: '%',pattern:'#'}
-       };
+                
+                $scope.data.setCell(0, 1, $scope.totalGrossIncome);
+                $scope.data.setCell(1, 1, $scope.vacancyAndCreditAllowance);
 
-       // Set default value
-       $scope.gaugeCapRate=['cap rate %', 10];
+                $scope.options = {
+                  title: 'Income',
+                  pieHole: 0.4,
+                };
 
-       $scope.gaugeChartObject.data = [
-         ['Label', 'Value'],
-         $scope.gaugeCapRate
-         // ['CPU', 55]
-         // ['Network', 68]
-       ];
+                $scope.chart = new google.visualization.PieChart(document.getElementById('incomedonutchart'));
+                $scope.chart.draw($scope.data, $scope.options);
+              }
 
+        // **********************************
 
+        // reset to default values at page load
+        $scope.reset();
         // calculate cap rate at page load
-        $scope.calcCapRate();
+        $scope.calcNOI();
 
     }) //end controller
 
