@@ -886,6 +886,7 @@ materialAdmin
                                 ;
 
             //Redraw chart
+            // $scope.redrawIncomeDonutChart();
             // Assign calculated value to gaugeCapRate
             // $scope.gaugeCapRate[1]=$scope.capRateCalculated;
              
@@ -898,29 +899,37 @@ materialAdmin
 
         // Google Chart
         google.charts.load("current", {packages:["corechart"]});
-              google.charts.setOnLoadCallback(drawChart);
-              function drawChart() {
-                $scope.data = google.visualization.arrayToDataTable([
-                  ['Income', 'Amount'],
-                  ['total gross income',     11],
-                  ['vacancy allowance',      2]
-                  // ['Commute',  2],
-                  // ['Watch TV', 2],
-                  // ['Sleep',    7]
-                ]);
+        google.charts.setOnLoadCallback(drawChart);
+        
+          function drawChart() {
+            $scope.data = google.visualization.arrayToDataTable([
+              ['Income', 'Amount'],
+              ['total gross income',     11],
+              ['vacancy allowance',      2]
+              // ['Commute',  2],
+              // ['Watch TV', 2],
+              // ['Sleep',    7]
+            ]);
 
-                
-                $scope.data.setCell(0, 1, $scope.totalGrossIncome);
-                $scope.data.setCell(1, 1, $scope.vacancyAndCreditAllowance);
+            
+            $scope.data.setCell(0, 1, $scope.totalGrossIncome);
+            $scope.data.setCell(1, 1, $scope.vacancyAndCreditAllowance);
 
-                $scope.options = {
-                  title: 'Income',
-                  pieHole: 0.4,
-                };
+            $scope.options = {
+              title: 'Income',
+              pieHole: 0.4,
+            };
 
-                $scope.chart = new google.visualization.PieChart(document.getElementById('incomedonutchart'));
-                $scope.chart.draw($scope.data, $scope.options);
-              }
+            $scope.chart = new google.visualization.PieChart(document.getElementById('incomedonutchart'));
+            $scope.chart.draw($scope.data, $scope.options);
+          }
+
+        
+        // $scope.redrawIncomeDonutChart = function () {
+        //     $scope.data.setCell(0, 1, $scope.totalGrossIncome);
+        //     $scope.data.setCell(1, 1, $scope.vacancyAndCreditAllowance);
+        //     $scope.chart.draw($scope.data, $scope.options);
+        // }
 
         // **********************************
 
