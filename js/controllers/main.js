@@ -806,17 +806,6 @@ materialAdmin
 
         // Reset the default values of the form
         $scope.reset = function() {
-                // $scope.value = angular.copy($scope.valueMaster);
-                // $scope.noi = angular.copy($scope.noiMaster);
-                // $scope.capRateCalculated= angular.copy($scope.capRateCalculatedMaster);
-
-                // $scope.grossScheduledRentIncome=angular.copy($scope.grossScheduledRentIncome);
-                // $scope.otherIncomeangular.copy($scope.otherIncomeangular);
-                // $scope.capRateCalculatedMasterangular.copy($scope.capRateCalculatedMasterangular);
-                // $scope.totalGrossIncomeangular.copy($scope.totalGrossIncomeangular);
-                // $scope.noiangular.copy($scope.noiangular);
-                // $scope.capRateCalculatedMaster=10;
-
                 $scope.grossScheduledRentIncome=12000;
                 $scope.otherIncome=100;
                 $scope.totalGrossIncome=$scope.grossScheduledRentIncome+$scope.otherIncome;
@@ -849,7 +838,7 @@ materialAdmin
                 $scope.sewerAndWater=7;
                 $scope.telephone=7;
                 $scope.otherUtilities=7;
-            };
+        };
 
 
         // Calculate the noi
@@ -885,52 +874,50 @@ materialAdmin
                                 +$scope.otherUtilities
                                 ;
 
-            //Redraw chart
-            // $scope.redrawIncomeDonutChart();
-            // Assign calculated value to gaugeCapRate
-            // $scope.gaugeCapRate[1]=$scope.capRateCalculated;
-             
-             // $('#percent-graph-custom-min').data('easyPieChart').update($scope.capRateCalculated);
-
+            //Pie Chart
+            $scope.grossScheduluedIncomeGraph[1].v = $scope.grossScheduledRentIncome;
+            $scope.otherIncomeGraph[1].v=$scope.otherIncome
+            $scope.vacancyAndCreditAllowanceGraph[1].v=$scope.vacancyAndCreditAllowance
+            
         }
 
 
-        // INCOME CHART OBJECT
-
-        // Google Chart
-        google.charts.load("current", {packages:["corechart"]});
-        google.charts.setOnLoadCallback(drawChart);
-        
-          function drawChart() {
-            $scope.data = google.visualization.arrayToDataTable([
-              ['Income', 'Amount'],
-              ['total gross income',     11],
-              ['vacancy allowance',      2]
-              // ['Commute',  2],
-              // ['Watch TV', 2],
-              // ['Sleep',    7]
-            ]);
-
+        // INCOME CHART OBJECT *****************
+        $scope.myChartObject = {};
             
-            $scope.data.setCell(0, 1, $scope.totalGrossIncome);
-            $scope.data.setCell(1, 1, $scope.vacancyAndCreditAllowance);
+            $scope.myChartObject.type = "PieChart";
+            
+            
+            $scope.grossScheduluedIncomeGraph = [
+                {v: "Total Gross Income"},
+                {v: 1},
+            ];
 
-            $scope.options = {
-              title: 'Income',
-              pieHole: 0.4,
+            $scope.otherIncomeGraph = [
+                {v: "Other Income"},
+                {v: 1},
+            ];
+
+            $scope.vacancyAndCreditAllowanceGraph = [
+                {v: "Vacancy/Credit Allowance"},
+                {v: 1},
+            ];
+            // $scope.onions[1].v =$scope.grossScheduledRentIncome;
+            // console.log($scope.onions);
+
+            $scope.myChartObject.data = {"cols": [
+                {id: "a", label: "label", type: "string"},
+                {id: "b", label: "amount", type: "number"}
+            ], "rows": [
+                {c: $scope.grossScheduluedIncomeGraph},
+                {c: $scope.otherIncomeGraph},
+                {c: $scope.vacancyAndCreditAllowanceGraph}
+            ]};
+
+            $scope.myChartObject.options = {
+                'title': 'Income',
+                'pieHole': 0.5
             };
-
-            $scope.chart = new google.visualization.PieChart(document.getElementById('incomedonutchart'));
-            $scope.chart.draw($scope.data, $scope.options);
-          }
-
-        
-        // $scope.redrawIncomeDonutChart = function () {
-        //     $scope.data.setCell(0, 1, $scope.totalGrossIncome);
-        //     $scope.data.setCell(1, 1, $scope.vacancyAndCreditAllowance);
-        //     $scope.chart.draw($scope.data, $scope.options);
-        // }
-
         // **********************************
 
         // reset to default values at page load
