@@ -817,29 +817,28 @@ materialAdmin
                 $scope.advertising=65;
                 $scope.insurance=200;
                 $scope.janitorialService=150;
-                $scope.lawnsnow=7;
-                $scope.legal=7;
-                $scope.licenses=7;
-                $scope.miscellaneous=7;
-                $scope.propertyManagement=7;
-                $scope.repairsAndMaintenance=7;
-                $scope.residentSuperintendent=7;
-                $scope.supplies=7;
+                $scope.lawnsnow=100;
+                $scope.legal=0;
+                $scope.licenses=0;
+                $scope.miscellaneous=50;
+                $scope.propertyManagement=0;
+                $scope.repairsAndMaintenance=300;
+                $scope.residentSuperintendent=0;
+                $scope.supplies=100;
                 // $scope.taxes=7;
-                $scope.realEstate=7;
-                $scope.personalProperty=7;
-                $scope.payroll=7;
-                $scope.otherTax=7;
-                $scope.trashRemoval=7;
+                $scope.realEstate=400;
+                $scope.personalProperty=0;
+                $scope.payroll=0;
+                $scope.otherTax=0;
+                $scope.trashRemoval=100;
                 // $scope.utilities=7;
-                $scope.electricity=7;
-                $scope.fuelOil=7;
-                $scope.gas=7;
-                $scope.sewerAndWater=7;
-                $scope.telephone=7;
-                $scope.otherUtilities=7;
+                $scope.electricity=0;
+                $scope.fuelOil=0;
+                $scope.gas=0;
+                $scope.sewerAndWater=0;
+                $scope.telephone=0;
+                $scope.otherUtilities=0;
         };
-
 
         // Calculate the noi
         $scope.calcNOI = function () {
@@ -873,25 +872,53 @@ materialAdmin
                                 +$scope.telephone
                                 +$scope.otherUtilities
                                 ;
+            
+            $scope.noi=$scope.grossOperatingIncome - $scope.totalExpenses;
 
-            //Pie Chart
-            $scope.grossScheduluedIncomeGraph[1].v = $scope.grossScheduledRentIncome;
-            $scope.otherIncomeGraph[1].v=$scope.otherIncome
-            $scope.vacancyAndCreditAllowanceGraph[1].v=$scope.vacancyAndCreditAllowance
+            //Income Pie Chart
+            $scope.grossScheduledIncomeGraph[1].v = $scope.grossScheduledRentIncome;
+            $scope.otherIncomeGraph[1].v=$scope.otherIncome;
+            // $scope.vacancyAndCreditAllowanceGraph[1].v=$scope.vacancyAndCreditAllowance;
+
+            //Expense Chart
+            $scope.accountingExpensePieChart[1].v = $scope.accounting;
+            $scope.advertisingExpensePieChart[1].v = $scope.advertising;
+            $scope.insuranceExpensePieChart[1].v = $scope.insurance;
+            $scope.janitorialServiceExpensePieChart[1].v = $scope.janitorialService;
+            $scope.lawnsnowExpensePieChart[1].v = $scope.lawnsnow;
+            $scope.legalExpensePieChart[1].v = $scope.legal;
+            $scope.licensesExpensePieChart[1].v = $scope.licenses;
+            $scope.miscellaneousExpensePieChart[1].v = $scope.miscellaneous;
+            $scope.propertyManagementExpensePieChart[1].v = $scope.propertyManagement;
+            $scope.repairsAndMaintenanceExpensePieChart[1].v = $scope.repairsAndMaintenance;
+            $scope.residentSuperintendentExpensePieChart[1].v = $scope.residentSuperintendent;
+            $scope.suppliesExpensePieChart[1].v = $scope.supplies;
+            $scope.realEstateExpensePieChart[1].v = $scope.realEstate;
+            $scope.personalPropertyExpensePieChart[1].v = $scope.personalProperty;
+            $scope.payrollExpensePieChart[1].v = $scope.payroll;
+            $scope.otherTaxExpensePieChart[1].v = $scope.otherTax;
+            $scope.trashRemovalExpensePieChart[1].v = $scope.trashRemoval;
+            $scope.electricityExpensePieChart[1].v = $scope.electricity;
+            $scope.fuelOilExpensePieChart[1].v = $scope.fuelOil;
+            $scope.gasExpensePieChart[1].v = $scope.gas;
+            $scope.sewerAndWaterExpensePieChart[1].v = $scope.sewerAndWater;
+            $scope.telephoneExpensePieChart[1].v = $scope.telephone;
+            $scope.otherUtilitiesExpensePieChart[1].v = $scope.otherUtilities;
             
         }
 
 
         // INCOME CHART OBJECT *****************
-        $scope.myChartObject = {};
+        $scope.incomeChartObject = {};
             
-            $scope.myChartObject.type = "PieChart";
+            $scope.incomeChartObject.type = "PieChart";
             
             
-            $scope.grossScheduluedIncomeGraph = [
+            $scope.grossScheduledIncomeGraph = [
                 {v: "Total Gross Income"},
                 {v: 1},
             ];
+            // $scope.grossScheduledIncomeGraph[1].v = $scope.grossScheduledRentIncome;
 
             $scope.otherIncomeGraph = [
                 {v: "Other Income"},
@@ -905,20 +932,85 @@ materialAdmin
             // $scope.onions[1].v =$scope.grossScheduledRentIncome;
             // console.log($scope.onions);
 
-            $scope.myChartObject.data = {"cols": [
+            $scope.incomeChartObject.data = {"cols": [
                 {id: "a", label: "label", type: "string"},
                 {id: "b", label: "amount", type: "number"}
             ], "rows": [
-                {c: $scope.grossScheduluedIncomeGraph},
-                {c: $scope.otherIncomeGraph},
-                {c: $scope.vacancyAndCreditAllowanceGraph}
+                {c: $scope.grossScheduledIncomeGraph},
+                {c: $scope.otherIncomeGraph}
+                // {c: $scope.vacancyAndCreditAllowanceGraph}
             ]};
 
-            $scope.myChartObject.options = {
+            $scope.incomeChartObject.options = {
                 'title': 'Income',
                 'pieHole': 0.5
             };
         // **********************************
+        // expenseChartObject
+        $scope.expenseChartObject = {};
+            
+            $scope.expenseChartObject.type = "PieChart";
+            
+            // Expenses
+            $scope.accountingExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.advertisingExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.insuranceExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.janitorialServiceExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.lawnsnowExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.legalExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.licensesExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.miscellaneousExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.propertyManagementExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.repairsAndMaintenanceExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.residentSuperintendentExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.suppliesExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.realEstateExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.personalPropertyExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.payrollExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.otherTaxExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.trashRemovalExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.electricityExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.fuelOilExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.gasExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.sewerAndWaterExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.telephoneExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.otherUtilitiesExpensePieChart =[{v: "expenseName"}, {v:1}];
+
+            $scope.expenseChartObject.data = {"cols": [
+                {id: "a", label: "label", type: "string"},
+                {id: "b", label: "amount", type: "number"}
+            ], "rows": [
+                {c: $scope.accountingExpensePieChart}, 
+                {c: $scope.advertisingExpensePieChart}, 
+                {c: $scope.insuranceExpensePieChart}, 
+                {c: $scope.janitorialServiceExpensePieChart}, 
+                {c: $scope.lawnsnowExpensePieChart}, 
+                {c: $scope.legalExpensePieChart}, 
+                {c: $scope.licensesExpensePieChart}, 
+                {c: $scope.miscellaneousExpensePieChart}, 
+                {c: $scope.propertyManagementExpensePieChart}, 
+                {c: $scope.repairsAndMaintenanceExpensePieChart}, 
+                {c: $scope.residentSuperintendentExpensePieChart}, 
+                {c: $scope.suppliesExpensePieChart}, 
+                {c: $scope.realEstateExpensePieChart}, 
+                {c: $scope.personalPropertyExpensePieChart}, 
+                {c: $scope.payrollExpensePieChart}, 
+                {c: $scope.otherTaxExpensePieChart}, 
+                {c: $scope.trashRemovalExpensePieChart}, 
+                {c: $scope.electricityExpensePieChart}, 
+                {c: $scope.fuelOilExpensePieChart}, 
+                {c: $scope.gasExpensePieChart}, 
+                {c: $scope.sewerAndWaterExpensePieChart}, 
+                {c: $scope.telephoneExpensePieChart}, 
+                {c: $scope.otherUtilitiesExpensePieChart} 
+            ]};
+
+            $scope.expenseChartObject.options = {
+                'title': 'Expenses',
+                'pieHole': 0.5
+            };
+        // #################################################################
+
 
         // reset to default values at page load
         $scope.reset();
