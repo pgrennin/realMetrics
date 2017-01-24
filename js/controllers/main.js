@@ -874,6 +874,8 @@ materialAdmin
                                 ;
             
             $scope.noi=$scope.grossOperatingIncome - $scope.totalExpenses;
+            $scope.totalUtilities=$scope.electricity+$scope.fuelOil+$scope.gas+$scope.sewerAndWater+$scope.telephone+$scope.otherUtilities;
+
 
             //Income Pie Chart
             $scope.grossScheduledIncomeGraph[1].v = $scope.grossScheduledRentIncome;
@@ -904,6 +906,38 @@ materialAdmin
             $scope.sewerAndWaterExpensePieChart[1].v = $scope.sewerAndWater;
             $scope.telephoneExpensePieChart[1].v = $scope.telephone;
             $scope.otherUtilitiesExpensePieChart[1].v = $scope.otherUtilities;
+
+            //Percents
+            $scope.grossScheduledIncomePercent= ($scope.grossScheduledRentIncome/$scope.totalGrossIncome)*100;
+            $scope.otherIncomePercent=($scope.otherIncome/$scope.totalGrossIncome)*100;
+            $scope.vacancyAndCreditAllowancePercent=($scope.vacancyAndCreditAllowance/$scope.totalGrossIncome)*100;
+            $scope.grossOperatingIncomePercent= ($scope.grossOperatingIncome/$scope.totalGrossIncome)*100;
+
+            $scope.accountingPercent=($scope.accounting / $scope.totalExpenses )*100;
+            $scope.advertisingPercent=($scope.advertising / $scope.totalExpenses )*100;
+            $scope.insurancePercent=($scope.insurance / $scope.totalExpenses )*100;
+            $scope.janitorialServicePercent=($scope.janitorialService / $scope.totalExpenses )*100;
+            $scope.lanwnsnowPercent=($scope.lawnsnow / $scope.totalExpenses )*100;
+            $scope.legalPercent=($scope.legal / $scope.totalExpenses )*100;
+            $scope.licensesPercent=($scope.licenses / $scope.totalExpenses )*100;
+            $scope.miscellaneousPercent=($scope.miscellaneous / $scope.totalExpenses )*100;
+            $scope.propertyManagementPercent=($scope.propertyManagement / $scope.totalExpenses )*100;
+            $scope.repairsAndMaintenancePercent=($scope.repairsAndMaintenance / $scope.totalExpenses )*100;
+            $scope.residentSuperIntendentPercent=($scope.residentSuperintendent / $scope.totalExpenses )*100;
+            $scope.suppliesPercent=($scope.supplies / $scope.totalExpenses )*100;
+            $scope.realEstateTaxesPercent=($scope.realEstate / $scope.totalExpenses )*100;
+            $scope.personalPropertyTaxesPercent=($scope.personalProperty / $scope.totalExpenses )*100;
+            $scope.payrollTaxesPercent=($scope.payroll / $scope.totalExpenses )*100;
+            $scope.otherTaxesPercent=($scope.otherTax / $scope.totalExpenses )*100;
+            $scope.trashRemovalPercent=($scope.trashRemoval / $scope.totalExpenses )*100;
+            $scope.UtilitiesPercent=($scope.totalUtilities / $scope.totalExpenses )*100;
+            $scope.fuelOilPercent=($scope.fuelOil / $scope.totalExpenses )*100;
+            $scope.gasPercent=($scope.gas / $scope.totalExpenses )*100;
+            $scope.sewerAndWaterPercent=($scope.sewerAndWater / $scope.totalExpenses )*100;
+            $scope.telephonePercent=($scope.telephone / $scope.totalExpenses )*100;
+            $scope.otherUtilitiesPercent=($scope.otherUtilities / $scope.totalExpenses )*100;
+            
+            $scope.netOperatingIncomePercent=($scope.noi / $scope.totalGrossIncome )*100;
             
         }
 
@@ -952,29 +986,29 @@ materialAdmin
             $scope.expenseChartObject.type = "PieChart";
             
             // Expenses
-            $scope.accountingExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.advertisingExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.insuranceExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.janitorialServiceExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.lawnsnowExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.legalExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.licensesExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.miscellaneousExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.propertyManagementExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.repairsAndMaintenanceExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.residentSuperintendentExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.suppliesExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.realEstateExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.personalPropertyExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.payrollExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.otherTaxExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.trashRemovalExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.electricityExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.fuelOilExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.gasExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.sewerAndWaterExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.telephoneExpensePieChart =[{v: "expenseName"}, {v:1}];
-            $scope.otherUtilitiesExpensePieChart =[{v: "expenseName"}, {v:1}];
+            $scope.accountingExpensePieChart =[{v: "Accounting"}, {v:1}];
+            $scope.advertisingExpensePieChart =[{v: "Advertising"}, {v:1}];
+            $scope.insuranceExpensePieChart =[{v: "Insurance"}, {v:1}];
+            $scope.janitorialServiceExpensePieChart =[{v: "Janitorial Service"}, {v:1}];
+            $scope.lawnsnowExpensePieChart =[{v: "Lawn/Snow"}, {v:1}];
+            $scope.legalExpensePieChart =[{v: "Legal"}, {v:1}];
+            $scope.licensesExpensePieChart =[{v: "Licenses"}, {v:1}];
+            $scope.miscellaneousExpensePieChart =[{v: "Miscellaneous"}, {v:1}];
+            $scope.propertyManagementExpensePieChart =[{v: "Property Management"}, {v:1}];
+            $scope.repairsAndMaintenanceExpensePieChart =[{v: "Repairs and Maintenance"}, {v:1}];
+            $scope.residentSuperintendentExpensePieChart =[{v: "Resident Superintendent"}, {v:1}];
+            $scope.suppliesExpensePieChart =[{v: "Supplies"}, {v:1}];
+            $scope.realEstateExpensePieChart =[{v: "Real Estate Taxes"}, {v:1}];
+            $scope.personalPropertyExpensePieChart =[{v: "Personal Property Taxes"}, {v:1}];
+            $scope.payrollExpensePieChart =[{v: "Payroll Taxes"}, {v:1}];
+            $scope.otherTaxExpensePieChart =[{v: "Other Tax"}, {v:1}];
+            $scope.trashRemovalExpensePieChart =[{v: "Trash Removal"}, {v:1}];
+            $scope.electricityExpensePieChart =[{v: "Electricity"}, {v:1}];
+            $scope.fuelOilExpensePieChart =[{v: "Fuel oil"}, {v:1}];
+            $scope.gasExpensePieChart =[{v: "Gas"}, {v:1}];
+            $scope.sewerAndWaterExpensePieChart =[{v: "Sewer and Water"}, {v:1}];
+            $scope.telephoneExpensePieChart =[{v: "Telephone"}, {v:1}];
+            $scope.otherUtilitiesExpensePieChart =[{v: "Other Utilities"}, {v:1}];
 
             $scope.expenseChartObject.data = {"cols": [
                 {id: "a", label: "label", type: "string"},

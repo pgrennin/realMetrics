@@ -10,10 +10,10 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li>
-                            <a href="" ng-click="reset()">reset</a>
+                            <a href="" ng-click="reset()">Reset</a>
                         </li>
                         <li>
-                            <a href="">information about this metric</a>
+                            <a href="">Information About This Metric</a>
                         </li>
                     </ul>
                 </li>
@@ -34,7 +34,7 @@
             <!-- <hr> -->
             <div class="row p-t-0">
                 <form>
-                    <div class="col-sm-8 m-b-30">
+                    <div class="col-sm-6 m-b-30">
                         
                         <h4>Income</h4>
                         <!-- <hr> -->
@@ -45,7 +45,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                             <div class="input-group m-b-15">
-                                <label>gross scheduled rent income</label>
+                                <label>Gross Scheduled Rent Income</label>
                                 <div class="fg-line">
                                     <input type="text" class="form-control" placeholder="" ng-model="grossScheduledRentIncome" ng-change="calcNOI()" ui-money-mask="0">
                                 </div>
@@ -56,8 +56,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="grossScheduledRentIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    100%
+                                    {{grossScheduledIncomePercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -67,7 +66,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                             <div class="input-group m-b-15">
-                                <label>other income</label>
+                                <label>Other Income</label>
                                 <div class="fg-line">
                                     <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-money-mask="0">
                                 </div>
@@ -78,8 +77,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{otherIncomePercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -99,7 +97,7 @@
                             <div class="col-sm-6">
                             <div class="input-group m-b-15">
                                 <div class="">
-                                    25%
+                                    100%
                                 </div>
                             </div>
                             </div>
@@ -122,7 +120,7 @@
                                 <br>
                                 <div class="fg-line">
                                     <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{vacancyAndCreditAllowancePercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -143,14 +141,10 @@
                             <div class="col-sm-6">
                             <div class="input-group m-b-15">
                                 <div class="">
-                                    25%
+                                    {{grossOperatingIncomePercent | number:0}}%
                                 </div>
                             </div>
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div google-chart chart="incomeChartObject" style="height:400px; width:100%;"></div>
                         </div>
 
                         <!-- <hr> -->
@@ -169,8 +163,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{accountingPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -190,8 +183,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{advertisingPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -211,8 +203,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{insurancePercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -232,8 +223,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{janitorialServicePercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -254,8 +244,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{lanwnsnowPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -276,8 +265,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{legalPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -298,8 +286,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{licensesPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -320,8 +307,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{miscellaneousPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -342,8 +328,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{propertyManagementPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -364,8 +349,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{repairsAndMaintenancePercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -386,8 +370,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{residentSuperIntendentPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -408,8 +391,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{suppliesPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -433,8 +415,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{realEstateTaxesPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -455,8 +436,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{personalPropertyTaxesPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -477,8 +457,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{payrollTaxesPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -499,8 +478,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{otherTaxesPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -521,8 +499,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{trashRemovalPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -546,8 +523,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{UtilitiesPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -568,8 +544,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{fuelOilPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -590,8 +565,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{gasPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -612,8 +586,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{sewerAndWaterPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -634,8 +607,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{telephonePercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -656,8 +628,7 @@
                             <div class="input-group m-b-15">
                                 <br><br>
                                 <div class="fg-line">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{otherUtilitiesPercent | number:0}}%
                                 </div>
                             </div>
                             </div>
@@ -670,7 +641,6 @@
                                 <!-- <label>Vacany & Credit Allowance</label> -->
                                 <div class="    form-control">
                                     {{totalExpenses | currency}}
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="totalExpenses" ng-change="calcNOI()" ui-money-mask="0"> -->
                                 </div>
                             </div>
                             </div>
@@ -679,18 +649,14 @@
                             <div class="input-group m-b-15">
                                 <!-- <br> -->
                                 <div class="">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    <!-- {{ExpenseNamePercent | number:0}}% -->
+                                    100%
                                 </div>
                             </div>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div google-chart chart="expenseChartObject" style="height:400px; width:100%;"></div>
-                        </div>
-
-
+                    
                         <h4>Net Operating Income</h4>
                         <div class="row">
                             <div class="col-sm-6">
@@ -698,7 +664,6 @@
                                 <!-- <label>Vacany & Credit Allowance</label> -->
                                 <div class="    form-control">
                                     {{noi | currency}}
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="totalExpenses" ng-change="calcNOI()" ui-money-mask="0"> -->
                                 </div>
                             </div>
                             </div>
@@ -707,14 +672,28 @@
                             <div class="input-group m-b-15">
                                 <!-- <br> -->
                                 <div class="">
-                                    <!-- <input type="text" class="form-control" placeholder="" ng-model="otherIncome" ng-change="calcNOI()" ui-percentage-mask="0"> -->
-                                    25%
+                                    {{netOperatingIncomePercent | number:0}}%
                                 </div>
                             </div>
                             </div>
                         </div>
                         
                     </div> <!-- end column -->
+                    
+
+                    <div class="col-sm-6 m-b-30">
+
+                        <div class="row">
+                            <div google-chart chart="incomeChartObject" style="height:600px; width:100%;"></div>
+                        </div>
+
+                        <div class="row">
+                            <div google-chart chart="expenseChartObject" style="height:600px; width:100%;"></div>
+                        </div>
+                    </div>
+
+
+
                     
                 </form>
                 
@@ -732,8 +711,8 @@
             <!-- end row -->
             <div class="row">
                 <div class="col-sm-12 m-b-20 text-center">
-                    <a class="btn btn-primary" href="#/net-cap-rate">about this metric</a>
-                    <a class="btn btn-primary" href="" ng-click="reset()">reset</a>
+                    <a class="btn btn-primary" href="#/net-cap-rate">About This Metric</a>
+                    <a class="btn btn-primary" href="" ng-click="reset()">Reset</a>
                 </div>
             </div>
             <!-- end row -->
