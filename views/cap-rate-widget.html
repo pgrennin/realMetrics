@@ -1,7 +1,7 @@
 <div ng-controller="capRateGraphController">
     <div class="card">
         <div class="card-header ch-alt m-b-20">
-            <h2>capitalization rate <small>The capitalization rate is the rate of return on a real estate investment property based on the income that the property is expected to generate. The capitalization rate is used to estimate the investor's potential return on his or her investment.
+            <h2>Capitalization Rate <small>The capitalization rate is the rate of return on a real estate investment property based on the income that the property is expected to generate. The capitalization rate is used to estimate the investor's potential return on his or her investment.
                             </small></h2>
             <ul class="actions">
                 <li class="dropdown" uib-dropdown>
@@ -10,10 +10,10 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right">
                         <li>
-                            <a href="" ng-click="reset()">reset</a>
+                            <a href="" ng-click="reset()">Reset</a>
                         </li>
                         <li>
-                            <a href="">information about this metric</a>
+                            <a href="">Information About This Metric</a>
                         </li>
                     </ul>
                 </li>
@@ -37,7 +37,7 @@
                 <form>
                     <div class="col-sm-6 m-b-30">
                         <div class="input-group">
-                            <label>net operating income</label>
+                            <label>Net Operating Income</label>
                             <div class="fg-line">
                                 <input type="text" class="form-control" placeholder="" ng-model="noi" ng-change="calcCapRate()" ng-model="money" ui-money-mask="0">
                             </div>
@@ -46,7 +46,7 @@
                     <div class="col-sm-6 m-b-20">
                         <div class="input-group">
                             <div class="fg-line">
-                                <label>value</label>
+                                <label>Value</label>
                                 <input type="text" class="form-control" placeholder="" ng-model="value" ng-change="calcCapRate()" ng-model="money" ui-money-mask="0">
                             </div>
                         </div>
@@ -65,8 +65,8 @@
             <!-- end row -->
             <div class="row">
                 <div class="col-sm-12 m-b-20 text-center">
-                    <a class="btn btn-primary" href="#/net-cap-rate">about this metric</a>
-                    <a class="btn btn-primary" href="" ng-click="reset()">reset</a>
+                    <a class="btn btn-primary" href="#/net-cap-rate">About This Metric</a>
+                    <a class="btn btn-primary" href="" ng-click="reset()">Reset</a>
                 </div>
             </div>
             <!-- end row -->

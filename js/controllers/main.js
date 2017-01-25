@@ -907,6 +907,11 @@ materialAdmin
             $scope.telephoneExpensePieChart[1].v = $scope.telephone;
             $scope.otherUtilitiesExpensePieChart[1].v = $scope.otherUtilities;
 
+            // income expense chart
+            $scope.noiINcomeExpenseChart[1].v=$scope.noi;
+            // $scope.grossOperatingIncomeIncomeExpenseChart[1].v=$scope.grossOperatingIncome;
+            $scope.totalExpensesIncomeExpenseChart[1].v=$scope.totalExpenses;
+
             //Percents
             $scope.grossScheduledIncomePercent= ($scope.grossScheduledRentIncome/$scope.totalGrossIncome)*100;
             $scope.otherIncomePercent=($scope.otherIncome/$scope.totalGrossIncome)*100;
@@ -1043,6 +1048,30 @@ materialAdmin
                 'title': 'Expenses',
                 'pieHole': 0.5
             };
+        // #################################################################
+        // incomeExpenseChartObject
+            $scope.incomeExpenseChartObject = {};
+            
+            $scope.incomeExpenseChartObject.type = "PieChart";
+            
+            $scope.noiINcomeExpenseChart =[{v: "NOI"}, {v:1}];
+            // $scope.grossOperatingIncomeIncomeExpenseChart =[{v: "grossOperatingIncome"}, {v:1}];
+            $scope.totalExpensesIncomeExpenseChart =[{v: "Expense"}, {v:1}];
+
+
+            $scope.incomeExpenseChartObject.data = {"cols": [
+                {id: "a", label: "label", type: "string"},
+                {id: "b", label: "amount", type: "number"}
+            ], "rows": [
+                {c: $scope.noiINcomeExpenseChart}, 
+                {c: $scope.totalExpensesIncomeExpenseChart}, 
+            ]};
+
+            $scope.incomeExpenseChartObject.options = {
+                'title': 'Income/Expenses',
+                'pieHole': 0.5
+            };
+
         // #################################################################
 
 
