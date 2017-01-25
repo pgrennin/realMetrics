@@ -1068,7 +1068,7 @@ materialAdmin
             ]};
 
             $scope.incomeExpenseChartObject.options = {
-                'title': 'Income/Expenses',
+                'title': 'NOI/Expense',
                 'pieHole': 0.5
             };
 
