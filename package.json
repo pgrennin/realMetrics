@@ -27,7 +27,7 @@
     "node": "7.2.1"
   },
   "scripts": {
-      "start": "node app",
-      "postinstall": "gulp default"
+      "start": "node js/app.js",
+      "postinstall": "gulp serve"
   }
 }
