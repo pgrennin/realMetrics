@@ -18,5 +18,11 @@
   "dependencies": {
     "angular-animate": "^1.4.3",
     "ng-if-bootstrap-grid": "^0.1.0"
+  },
+  "engines": {
+    "node": "7.2.1"
+  },
+  "scripts": {
+      "start": "gulp serve"
   }
 }
