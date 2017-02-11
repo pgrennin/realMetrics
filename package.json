@@ -23,6 +23,7 @@
     "node": "7.2.1"
   },
   "scripts": {
-      "start": "gulp serve"
+      "start": "gulp serve",
+      "postinstall": "gulp default"
   }
 }
