@@ -17,7 +17,11 @@
   },
   "dependencies": {
     "angular-animate": "^1.4.3",
-    "ng-if-bootstrap-grid": "^0.1.0"
+    "ng-if-bootstrap-grid": "^0.1.0",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.8"
   },
   "engines": {
     "node": "7.2.1"
