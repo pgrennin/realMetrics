@@ -18,6 +18,15 @@ gulp.task('serve', function() {
   gulp.watch(['*.html', 'css/*.css', 'js/*.js', 'views/*.html', 'template/*.html', './*.html'], {cwd: 'app'}, reload);
 });
 
+gulp.task('heroku', function() {
+  // browserSync({
+  //   server: {
+  //     baseDir: './'
+  //   }
+  // });
+  gulp.watch(['*.html', 'css/*.css', 'js/*.js', 'views/*.html', 'template/*.html', './*.html'], {cwd: 'app'}, reload);
+});
+
 
 // https://github.com/gulpjs/gulp/blob/master/docs/recipes/minified-and-non-minified.md
 // var DEST = './';
