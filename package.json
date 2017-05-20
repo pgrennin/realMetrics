@@ -37,7 +37,7 @@
   "scripts": {
       // "start": "node js/app.js",
       // "postinstall": "gulp heroku:production"
-      "start": "node app",
+      "start": "node js/app.js",
       "postinstall": "gulp default"
   }
 
