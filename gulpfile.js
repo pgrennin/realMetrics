@@ -27,6 +27,14 @@ gulp.task('heroku', function() {
   gulp.watch(['*.html', 'css/*.css', 'js/*.js', 'views/*.html', 'template/*.html', './*.html'], {cwd: 'app'}, reload);
 });
 
+// heroku test
+// var gulp = require('gulp')
+var runSeq = require('run-sequence')
+
+gulp.task('heroku:production', function(){
+  runSeq('clean', 'build', 'minify')
+})
+
 
 // https://github.com/gulpjs/gulp/blob/master/docs/recipes/minified-and-non-minified.md
 // var DEST = './';
