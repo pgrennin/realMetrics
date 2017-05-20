@@ -35,8 +35,8 @@
     "node": "7.2.1"
   },
   "scripts": {
-      "build": "gulp",
-      "start": "node js/app.js",
-      "postinstall": "gulp heroku"
+      "build": "gulp heroku:production",
+      // "start": "node js/app.js",
+      // "postinstall": "gulp heroku"
   }
 }
