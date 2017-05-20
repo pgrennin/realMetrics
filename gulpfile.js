@@ -28,18 +28,54 @@ gulp.task('heroku', function() {
 });
 
 // heroku test
+///////////////////////////////////////////////////////////////
 // var gulp = require('gulp')
 // var runSeq = require('run-sequence')
 
+//NOT Working
 gulp.task('heroku:production', function(){
   browserSync({
     server: {
       baseDir: './'
     }
   });
-
   // gulp.watch(['*.html', 'css/*.css', 'js/*.js', 'views/*.html', 'template/*.html', './*.html'], {cwd: 'app'}, reload);
 })
+///////////////////////////////////////////////////////////
+
+gulp.task('javascript', function() {
+  return gulp.src('js/*.js')
+    .pipe(wrap('(function($, window){<%= contents %>}(jQuery, window));'))
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest('public/javascripts'))
+    .pipe(notify({ message: 'Scripts task complete' }));
+});
+
+gulp.task('css', function() {
+  return gulp.src('assets/style/*.styl')
+    .pipe(stylus({
+      use: nib(),
+      compress: true
+    }))
+    .pipe(gulp.dest('public/stylesheets'))
+    .pipe(notify({ message: 'CSS task complete' }));
+});
+
+gulp.task('default', function() {
+  gulp.start('javascript');
+  gulp.start('css');
+});
+
+// gulp.task('serveprod', function() {
+//   connect.server({
+//     root: './',
+//     port: process.env.PORT || 5000, // localhost:5000
+//     livereload: false
+//   });
+// });
 
 
 // https://github.com/gulpjs/gulp/blob/master/docs/recipes/minified-and-non-minified.md
