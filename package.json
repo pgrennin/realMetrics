@@ -11,9 +11,14 @@
     "grunt-csssplit": "^0.4.0",
     "grunt-serve": "^0.1.6",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.0.0",
     "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.6.0",
     "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "gulp-wrap": "^0.13.0",
+    "nib": "^1.1.2"
   },
   "dependencies": {
     "angular-animate": "^1.4.3",
@@ -27,16 +32,20 @@
     "grunt-csssplit": "^0.4.0",
     "grunt-serve": "^0.1.6",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.0.0",
     "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.6.0",
     "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "gulp-wrap": "^0.13.0",
+    "nib": "^1.1.2"
   },
   "engines": {
     "node": "7.2.1"
   },
   "scripts": {
-      "start": "node app",
-      "postinstall": "gulp default"
+    "start": "node app",
+    "postinstall": "gulp default"
   }
-
 }
