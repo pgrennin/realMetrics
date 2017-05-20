@@ -5,6 +5,13 @@ var reload = browserSync.reload;
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 
+//added 5/20/17
+var concat = require('gulp-concat');
+var notify = require('gulp-notify');
+var rename = require('gulp-rename');
+var wrap   = require('gulp-wrap');
+var nib    = require('nib');
+var stylus = require('gulp-stylus');
 
 
 // watch files for changes and reload
