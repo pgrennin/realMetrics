@@ -559,4 +559,13 @@ materialAdmin
                 url: '/net-cap-rate',
                 templateUrl: 'views/net-cap-rate.html'
             })
+
+            //------------------------------
+            // about
+            //------------------------------
+            
+            .state ('about', {
+                url: '/about',
+                templateUrl: 'views/about.html'
+            })
     });
