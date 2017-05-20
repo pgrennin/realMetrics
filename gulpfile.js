@@ -29,10 +29,16 @@ gulp.task('heroku', function() {
 
 // heroku test
 // var gulp = require('gulp')
-var runSeq = require('run-sequence')
+// var runSeq = require('run-sequence')
 
 gulp.task('heroku:production', function(){
-  runSeq('clean', 'build', 'minify')
+  browserSync({
+    server: {
+      baseDir: './'
+    }
+  });
+
+  gulp.watch(['*.html', 'css/*.css', 'js/*.js', 'views/*.html', 'template/*.html', './*.html'], {cwd: 'app'}, reload);
 })
 
 
