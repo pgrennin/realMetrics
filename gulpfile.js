@@ -13,6 +13,8 @@ var wrap   = require('gulp-wrap');
 var nib    = require('nib');
 var stylus = require('gulp-stylus');
 
+var builder = require('gulp-build')
+
 
 // watch files for changes and reload
 gulp.task('serve', function() {
@@ -62,7 +64,7 @@ gulp.task('javascript', function() {
 });
 
 gulp.task('css', function() {
-  return gulp.src('assets/style/*.styl')
+  return gulp.src('css/*.styl')
     .pipe(stylus({
       use: nib(),
       compress: true
@@ -74,6 +76,19 @@ gulp.task('css', function() {
 gulp.task('default', function() {
   gulp.start('javascript');
   gulp.start('css');
+});
+
+
+
+/////////////////////////////////////////////
+
+
+gulp.task('serveprod', function() {
+  connect.server({
+    root: '/',
+    port: process.env.PORT || 5000, // localhost:5000
+    livereload: false
+  });
 });
 
 // gulp.task('serveprod', function() {
