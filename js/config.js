@@ -568,4 +568,9 @@ materialAdmin
                 url: '/about',
                 templateUrl: 'views/about.html'
             })
+
+            .state ('noi-about', {
+                url: '/noi-about',
+                templateUrl: 'views/noi-about.html'
+            })
     });
